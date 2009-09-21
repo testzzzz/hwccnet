@@ -1,0 +1,53 @@
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/TestWinPwr.cpp:19: Warning: argument `int' of command @param is not found in the argument list of main(int argc, char *argv[])
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/TestWinPwr.cpp:19: Warning: argument `char' of command @param is not found in the argument list of main(int argc, char *argv[])
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/TestWinPwr.cpp:19: Warning: The following parameters of main(int argc, char *argv[]) are not documented:
+  parameter argc
+  parameter argv
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:49: Warning: argument `__out' of command @param is not found in the argument list of WindowsPowerLW::GetCurrentPowerScheme(__out UINT &nIndex, __out POWER_POLICY &PwrPolicy, __out SYSTEM_POWER_STATUS &SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:49: Warning: argument `__out' of command @param is not found in the argument list of WindowsPowerLW::GetCurrentPowerScheme(__out UINT &nIndex, __out POWER_POLICY &PwrPolicy, __out SYSTEM_POWER_STATUS &SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:49: Warning: argument `__out' of command @param is not found in the argument list of WindowsPowerLW::GetCurrentPowerScheme(__out UINT &nIndex, __out POWER_POLICY &PwrPolicy, __out SYSTEM_POWER_STATUS &SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:49: Warning: The following parameters of WindowsPowerLW::GetCurrentPowerScheme(__out UINT &nIndex, __out POWER_POLICY &PwrPolicy, __out SYSTEM_POWER_STATUS &SystemPowerStatus) are not documented:
+  parameter nIndex
+  parameter PwrPolicy
+  parameter SystemPowerStatus
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:69: Warning: argument `__out' of command @param is not found in the argument list of WindowsPowerLW::CanUserWritePowerScheme(__out bool *cuwpsFlag)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:69: Warning: The following parameters of WindowsPowerLW::CanUserWritePowerScheme(__out bool *cuwpsFlag) are not documented:
+  parameter cuwpsFlag
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:85: Warning: argument `__out' of command @param is not found in the argument list of WindowsPowerLW::GetSuspendTime(__out ULONG &nStandby, __out ULONG &nHibernate, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:85: Warning: argument `__out' of command @param is not found in the argument list of WindowsPowerLW::GetSuspendTime(__out ULONG &nStandby, __out ULONG &nHibernate, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:85: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::GetSuspendTime(__out ULONG &nStandby, __out ULONG &nHibernate, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:85: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::GetSuspendTime(__out ULONG &nStandby, __out ULONG &nHibernate, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:85: Warning: The following parameters of WindowsPowerLW::GetSuspendTime(__out ULONG &nStandby, __out ULONG &nHibernate, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus) are not documented:
+  parameter nStandby
+  parameter nHibernate
+  parameter pwrPolicy
+  parameter SystemPowerStatus
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:107: Warning: argument `__out' of command @param is not found in the argument list of WindowsPowerLW::GetVideoOffTime(__out ULONG &nVideoOffTime, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:107: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::GetVideoOffTime(__out ULONG &nVideoOffTime, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:107: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::GetVideoOffTime(__out ULONG &nVideoOffTime, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:107: Warning: The following parameters of WindowsPowerLW::GetVideoOffTime(__out ULONG &nVideoOffTime, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus) are not documented:
+  parameter nVideoOffTime
+  parameter pwrPolicy
+  parameter SystemPowerStatus
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:127: Warning: argument `__out' of command @param is not found in the argument list of WindowsPowerLW::GetDiskSpindownTime(__out ULONG &nSpindownTime, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:127: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::GetDiskSpindownTime(__out ULONG &nSpindownTime, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:127: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::GetDiskSpindownTime(__out ULONG &nSpindownTime, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:127: Warning: The following parameters of WindowsPowerLW::GetDiskSpindownTime(__out ULONG &nSpindownTime, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus) are not documented:
+  parameter nSpindownTime
+  parameter pwrPolicy
+  parameter SystemPowerStatus
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:147: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::UpdateCurrentPowerScheme(__in UINT nIndex, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus, __in ULONG nStandby=PWR_NEVER, __in ULONG nHibernate=PWR_NEVER, __in ULONG nSpindownTime=PWR_NEVER, __in ULONG nVedioOffTime=PWR_NEVER)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:147: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::UpdateCurrentPowerScheme(__in UINT nIndex, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus, __in ULONG nStandby=PWR_NEVER, __in ULONG nHibernate=PWR_NEVER, __in ULONG nSpindownTime=PWR_NEVER, __in ULONG nVedioOffTime=PWR_NEVER)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:147: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::UpdateCurrentPowerScheme(__in UINT nIndex, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus, __in ULONG nStandby=PWR_NEVER, __in ULONG nHibernate=PWR_NEVER, __in ULONG nSpindownTime=PWR_NEVER, __in ULONG nVedioOffTime=PWR_NEVER)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:147: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::UpdateCurrentPowerScheme(__in UINT nIndex, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus, __in ULONG nStandby=PWR_NEVER, __in ULONG nHibernate=PWR_NEVER, __in ULONG nSpindownTime=PWR_NEVER, __in ULONG nVedioOffTime=PWR_NEVER)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:147: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::UpdateCurrentPowerScheme(__in UINT nIndex, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus, __in ULONG nStandby=PWR_NEVER, __in ULONG nHibernate=PWR_NEVER, __in ULONG nSpindownTime=PWR_NEVER, __in ULONG nVedioOffTime=PWR_NEVER)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:147: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::UpdateCurrentPowerScheme(__in UINT nIndex, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus, __in ULONG nStandby=PWR_NEVER, __in ULONG nHibernate=PWR_NEVER, __in ULONG nSpindownTime=PWR_NEVER, __in ULONG nVedioOffTime=PWR_NEVER)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:147: Warning: argument `__in' of command @param is not found in the argument list of WindowsPowerLW::UpdateCurrentPowerScheme(__in UINT nIndex, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus, __in ULONG nStandby=PWR_NEVER, __in ULONG nHibernate=PWR_NEVER, __in ULONG nSpindownTime=PWR_NEVER, __in ULONG nVedioOffTime=PWR_NEVER)
+D:/Prototype/WindowsPowerLW/WindowsPowerLW/WindowsPowerLW.h:147: Warning: The following parameters of WindowsPowerLW::UpdateCurrentPowerScheme(__in UINT nIndex, __in POWER_POLICY pwrPolicy, __in SYSTEM_POWER_STATUS SystemPowerStatus, __in ULONG nStandby=PWR_NEVER, __in ULONG nHibernate=PWR_NEVER, __in ULONG nSpindownTime=PWR_NEVER, __in ULONG nVedioOffTime=PWR_NEVER) are not documented:
+  parameter nIndex
+  parameter pwrPolicy
+  parameter SystemPowerStatus
+  parameter nStandby
+  parameter nHibernate
+  parameter nSpindownTime
+  parameter nVedioOffTime

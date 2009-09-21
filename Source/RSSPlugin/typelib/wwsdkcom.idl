@@ -1,0 +1,1816 @@
+// wwsdkcom.idl : IDL source for wwsdkcom
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (wwsdkcom.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+interface ISDKContactMgr;
+interface ISDKMainFrame;
+interface ISDKLoginUser;
+interface ISDKChatDlgMgr;
+interface ISDKObjectCollection;
+interface ISDKImportantPanelSlot;
+interface ISDKBottomPanelSlot;
+interface ISDKChatDlg;
+interface ISDKContact;
+interface ISDKIMChatMainToolbarSlot;
+interface ISDKIMChatInputToolbarSlot;
+interface ISlotItemInfor;
+interface ISDKMainMenuSlot;
+interface IPluginMgrV2;
+
+interface ISDKContactMgr2;
+interface ISDKMainFrame2;
+interface ISDKChatDlgMgr2;
+interface ISDKImportantPanelSlot2;
+interface ISDKBottomPanelSlot2;
+interface ISDKLoginUser2;
+interface ISDKChatDlg2;
+interface ISDKContact2;
+interface ISDKIMChatMainToolbarSlot2;
+interface ISDKIMChatInputToolbarSlot2;
+interface ISDKMainMenuSlot2;
+
+interface ISDKContactMgr3;
+interface ISDKContact3;
+interface ISDKGroup;
+interface ISDKLoginUser3;
+interface ISDKChatDlg3;
+
+interface ISDKPluginQueryResult;
+
+enum SDKSlotID;
+enum SDKItemNotifyID;
+enum SDKSubscResult;
+enum SDKShowWinPos;
+enum SDKContactStatus;
+
+[
+	object,
+	uuid(C1D853A7-6312-485D-B429-88DEE876C3EA),
+	dual,
+	nonextensible,
+	helpstring("IWWAEP_PluginQuery 接口"),
+	pointer_default(unique)
+]
+interface IWWAEP_PluginQuery : IDispatch{
+	[id(2), helpstring("方法GetPluginInfo")] HRESULT GetPluginInfo([in] ISDKObjectCollection* pPluginCol);
+	[id(3), helpstring("方法NotifySubsInfo")] HRESULT NotifySubsInfo([in] BSTR appID, BSTR userID);
+	[id(4), helpstring("方法GetPluginLocalSubsInfo")] HRESULT GetPluginLocalSubsInfo([in] BSTR appID, BSTR userID, [out,retval] IDispatch** ppDisp);
+	[id(5), helpstring("方法GetPluginSubsInfo")] HRESULT GetPluginSubsInfo([in] BSTR appId, [in] BSTR userID, [in] ISDKPluginQueryResult *pQueryResult);
+};
+
+
+[
+	object,
+	uuid(B2073CA8-EF9C-47c5-AEF1-576B2E8AFDE4),
+	dual,
+	nonextensible,
+	helpstring("IWWAEP_PluginQuery2 接口"),
+	pointer_default(unique)
+]
+interface IWWAEP_PluginQuery2: IWWAEP_PluginQuery{
+	[id(6), helpstring("方法GetPluginSubsInfoEx")] HRESULT GetPluginSubsInfoEx([in] BSTR appId, [in] BSTR userID, [out, retval] ISDKPluginQueryResult **ppQueryResult);
+	[id(7), helpstring("方法GetPluginInfoEx")] HRESULT GetPluginInfoEx([in] ISDKObjectCollection* pPluginCol, [in] BSTR sFlag);
+};
+
+
+[
+	object,
+	uuid(52A19588-9AE5-4D53-A624-81056E6CAFC0),
+	dual,
+	nonextensible,
+	helpstring("IWWPluginQueryResult 接口"),
+	pointer_default(unique)
+]
+interface IWWPluginQueryResult : IDispatch{
+	[propget, id(1), helpstring("属性 SubscUserId")] HRESULT SubscUserId([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("属性 SubscUserId")] HRESULT SubscUserId([in] BSTR newVal);
+	[propget, id(2), helpstring("属性 AppInstanceId")] HRESULT AppInstanceId([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("属性 AppInstanceId")] HRESULT AppInstanceId([in] BSTR newVal);
+	[propget, id(3), helpstring("属性 SubscTime")] HRESULT SubscTime([out, retval] BSTR* pVal);
+	[propput, id(3), helpstring("属性 SubscTime")] HRESULT SubscTime([in] BSTR newVal);
+	[propget, id(4), helpstring("属性 ExpireTime")] HRESULT ExpireTime([out, retval] BSTR* pVal);
+	[propput, id(4), helpstring("属性 ExpireTime")] HRESULT ExpireTime([in] BSTR newVal);
+	[propget, id(5), helpstring("属性 ErrorMsg")] HRESULT ErrorMsg([out, retval] BSTR* pVal);
+	[propput, id(5), helpstring("属性 ErrorMsg")] HRESULT ErrorMsg([in] BSTR newVal);
+	[propget, id(6), helpstring("属性 SubscUrl")] HRESULT SubscUrl([out, retval] BSTR* pVal);
+	[propput, id(6), helpstring("属性 SubscUrl")] HRESULT SubscUrl([in] BSTR newVal);
+	[propget, id(7), helpstring("属性 Result")] HRESULT Result([out, retval] BSTR* pVal);
+	[propput, id(7), helpstring("属性 Result")] HRESULT Result([in] BSTR newVal);
+};
+
+[
+	object,
+	uuid(4EA061CE-82D4-4fbf-8504-7455671C0386),
+	dual,
+	nonextensible,
+	helpstring("ISDKPluginQueryResult 接口"),
+	pointer_default(unique)
+]
+interface ISDKPluginQueryResult : IDispatch{
+	[propget, id(1), helpstring("属性 CheckTime")] HRESULT CheckTime([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("属性 CheckTime")] HRESULT CheckTime([in] BSTR newVal);
+	[propget, id(2), helpstring("属性 ExpireTime")] HRESULT ExpireTime([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("属性 ExpireTime")] HRESULT ExpireTime([in] BSTR newVal);
+	[propget, id(3), helpstring("属性 SubscUrl")] HRESULT SubscUrl([out, retval] BSTR* pVal);
+	[propput, id(3), helpstring("属性 SubscUrl")] HRESULT SubscUrl([in] BSTR newVal);
+	[propget, id(4), helpstring("属性 SubscResult")] HRESULT SubscResult([out, retval] enum SDKSubscResult* pVal);
+	[propput, id(4), helpstring("属性 SubscResult")] HRESULT SubscResult([in] enum SDKSubscResult newVal);
+	[propget, id(5), helpstring("属性 AppId")] HRESULT AppId([out, retval] BSTR* pVal);
+	[propput, id(5), helpstring("属性 AppId")] HRESULT AppId([in] BSTR newVal);
+};
+
+[
+	object,
+	uuid(35FCD6E6-5924-4a0f-A36A-706E48127FB1),
+	dual,
+	nonextensible,
+	helpstring("ISDKPluginQueryResult 接口"),
+	pointer_default(unique)
+]
+interface ISDKPluginQueryResult2: ISDKPluginQueryResult{
+	[propget, id(6), helpstring("属性 AppInstanceId")] HRESULT AppInstanceId([out, retval] BSTR* pVal);
+	[propput, id(6), helpstring("属性 AppInstanceId")] HRESULT AppInstanceId([in] BSTR newVal);
+
+	[propget, id(7), helpstring("属性 SubscStartTime")] HRESULT SubscStartTime([out, retval] BSTR* pVal);
+	[propput, id(7), helpstring("属性 SubscStartTime")] HRESULT SubscStartTime([in] BSTR newVal);
+
+	[propget, id(8), helpstring("属性 SubscEndTime")] HRESULT SubscEndTime([out, retval] BSTR* pVal);
+	[propput, id(8), helpstring("属性 SubscEndTime")] HRESULT SubscEndTime([in] BSTR newVal);
+
+	[propget, id(9), helpstring("属性 subscUserId")] HRESULT SubscUserId([out, retval] BSTR* pVal);
+	[propput, id(9), helpstring("属性 subscUserId")] HRESULT SubscUserId([in] BSTR newVal); 
+};
+
+[
+	object,
+	uuid(05AA76A6-95D3-4C5D-BC17-76CC39055294),
+	dual,
+	nonextensible,
+	helpstring("ISDKApplication Interface"),
+	pointer_default(unique)
+]
+interface ISDKApplication : IDispatch
+{
+	[id(1), helpstring("method GetContactMgr")] 
+	HRESULT GetContactMgr([out,retval] ISDKContactMgr** ppContactMgr);
+
+	[id(2), helpstring("method GetMainFrame")]
+	HRESULT GetMainFrame([out,retval] ISDKMainFrame** ppMainFrame);
+
+	[id(3), helpstring("method GetLoginUser")] 
+	HRESULT GetLoginUser([out,retval] ISDKLoginUser** ppLoginUser);
+
+	[id(4), helpstring("method GetChatDlgMgr")] 
+	HRESULT GetChatDlgMgr([out,retval] ISDKChatDlgMgr** ppChatDlgMgr);
+
+	[id(5), helpstring("method ManualCheckUser")] 
+	HRESULT ManualCheckUser([in]LONG lPluginCookie,[out] BSTR* bstrUID);
+
+	[id(6), helpstring("method GetLoginUIDList")] 
+	HRESULT GetLoginUIDList([in] LONG lPluginCookie, [out,retval] ISDKObjectCollection** ppUIDList);
+	[id(7), helpstring("method BrowseURL")] HRESULT BrowseURL([in] BSTR bstrURL);
+};
+
+[
+	object,
+	uuid(57521EAA-9118-486f-983B-6AB91E21374F),
+	dual,
+	nonextensible,
+	helpstring("ISDKApplication2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKApplication2 : IDispatch
+{
+	[id(1), helpstring("method GetContactMgr")] 
+	HRESULT GetContactMgr([in]LONG lPluginCookie, [out,retval] IDispatch** ppContactMgr);
+
+	[id(2), helpstring("method GetMainFrame")]
+	HRESULT GetMainFrame([in]LONG lPluginCookie, [out,retval] IDispatch** ppMainFrame);
+
+	[id(3), helpstring("method GetLoginUser")] 
+	HRESULT GetLoginUser([in]LONG lPluginCookie, [out,retval] IDispatch** ppLoginUser);
+
+	[id(4), helpstring("method GetChatDlgMgr")] 
+	HRESULT GetChatDlgMgr([in]LONG lPluginCookie, [out,retval] IDispatch** ppChatDlgMgr);
+
+	[id(5), helpstring("method ManualCheckUser")] 
+	HRESULT ManualCheckUser([in]LONG lPluginCookie,[out] BSTR* bstrUID);
+
+	[id(6), helpstring("method GetLoginUIDList")] 
+	HRESULT GetLoginUIDList([in] LONG lPluginCookie, [out,retval] ISDKObjectCollection** ppUIDList);
+
+	[id(7), helpstring("method BrowseURL")] 
+	HRESULT BrowseURL([in]LONG lPluginCookie, [in] BSTR bstrURL);
+
+	/*[id(8), helpstring("method BrowseURL2")] 
+	HRESULT BrowseURL2([in]LONG lPluginCookie, 
+		[in]BSTR bstrIcon,
+		[in]BSTR bstrTitle,
+		[in]VARIANT_BOOL vbShowMax,
+		[in]VARIANT_BOOL vbShowMin,
+		[in]VARIANT_BOOL vbChangeSize,
+		[in]LONG lWidth,
+		[in]LONG lHeight,
+		[in]enum SDKShowWinPos ShowPos,
+		[in]VARIANT_BOOL vbAutoSign,
+		[in] BSTR bstrURL);*/
+};
+
+[
+	object,
+	uuid(B9D7BBFD-5232-4eb0-9892-3C21A2769E8C),
+	dual,
+	nonextensible,
+	helpstring("ISDKApplication3 Interface"),
+	pointer_default(unique)
+]
+interface ISDKApplication3: ISDKApplication2
+{
+	[id(100), helpstring("method GetVersion")] 
+	HRESULT GetVersion([in] LONG lPluginCookie, [out] BSTR* bstrDispVersion, [out] LONG *pVersion);
+
+	[id(100+1), helpstring("method GetSubScriptionInfo")] 
+	HRESULT GetSubScriptionInfo([in] LONG lPluginCookie , [out,retval] IDispatch** ppResult);
+};
+
+[
+	object,
+	uuid(EAEBB5CD-70D2-4832-89EF-B12117B50EF2),
+	dual,
+	nonextensible,
+	helpstring("ISDKContactMgr Interface"),
+	pointer_default(unique)
+]
+interface ISDKContactMgr : IDispatch{
+	[id(1), helpstring("method GetApplication")] HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+	[id(2), helpstring("method GetContact")] HRESULT GetContact([in] BSTR bstrContactUID, [out,retval] ISDKContact** ppContact);
+};
+
+[
+	object,
+	uuid(34BCE8C6-77C5-49b0-9D2E-E451B4F8F6BC),
+	dual,
+	nonextensible,
+	helpstring("IWWContactMgr Interface"),
+	pointer_default(unique)
+]
+interface IWWContactMgr : IDispatch{
+	[id(1), helpstring("method OnLogout")] HRESULT OnLogout();
+};
+
+
+[
+	object,
+	uuid(CC0E9FFF-7DC7-48d4-B83A-E651029791D6),
+	dual,
+	nonextensible,
+	helpstring("ISDKContactMgr2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKContactMgr2 : IDispatch{
+	[id(1), helpstring("method GetApplication")] HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+	[id(2), helpstring("method GetContact")] HRESULT GetContact([in] LONG lPluginCookie, [in] BSTR bstrContactUID, [out,retval] IDispatch** ppContact);
+};
+
+[
+	object,
+	uuid(6119ADD3-ECED-4481-BA82-125AA3E619AE),
+	dual,
+	nonextensible,
+	helpstring("ISDKContactMgr3 Interface"),
+	pointer_default(unique)
+]
+interface ISDKContactMgr3 : ISDKContactMgr2{
+	[id(3), helpstring("method GetRecentContactCollection")] HRESULT GetRecentContactCollection([in] LONG lPluginCookie, [out,retval] ISDKObjectCollection** ppRecentContactCollection);
+	[id(4), helpstring("method Get2rContactCollection")] HRESULT GetFilterContactCollection([in] LONG lPluginCookie, [out,retval] ISDKObjectCollection** ppFilterContactCollection);
+	[id(5), helpstring("method GetStrangerContactCollection")] HRESULT GetStrangerContactCollection([in] LONG lPluginCookie, [out,retval] ISDKObjectCollection** ppStrangerContactCollection);
+	[id(6), helpstring("method GetRootGroup")] HRESULT GetRootGroup([in] LONG lPluginCookie, [out,retval] IDispatch** ppGroupObj);
+	[id(7), helpstring("method GetGroup")] HRESULT GetGroup([in] LONG lPluginCookie, [in] BSTR sGroupID, [out,retval] IDispatch** ppGroupObj);
+};
+
+[
+	object,
+	uuid(DAF7304E-08B7-4F21-8DFB-57D1BEA820EF),
+	dual,
+	nonextensible,
+	helpstring("ISDKMainFrame Interface"),
+	pointer_default(unique)
+]
+interface ISDKMainFrame : IDispatch{
+	[id(1), helpstring("method GetApplication")] 
+	HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+
+	[id(2), helpstring("method GetImportantPanelSlot")] 
+	HRESULT GetImportantPanelSlot([out,retval] ISDKImportantPanelSlot** ppImportantPanelSlot);
+
+	[id(3), helpstring("method GetBottomPanelSlot")] 
+	HRESULT GetBottomPanelSlot([out,retval] ISDKBottomPanelSlot** ppBottomPanelSlot);
+};
+
+[
+	object,
+	uuid(3D8231D4-8236-46b0-AAE4-758D27332C38),
+	dual,
+	nonextensible,
+	helpstring("ISDKMainFrame2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKMainFrame2 : IDispatch{
+	[id(1), helpstring("method GetApplication")] 
+	HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+
+	[id(2), helpstring("method GetImportantPanelSlot")] 
+	HRESULT GetImportantPanelSlot([in] LONG lPluginCookie, [out,retval] IDispatch** ppImportantPanelSlot);
+
+	[id(3), helpstring("method GetBottomPanelSlot")] 
+	HRESULT GetBottomPanelSlot([in] LONG lPluginCookie, [out,retval] IDispatch** ppBottomPanelSlot);
+};
+
+[
+	object,
+	uuid(7E3F65A7-37F8-4542-BD00-A019ABAE70F2),
+	dual,
+	nonextensible,
+	helpstring("ISDKLoginUser Interface"),
+	pointer_default(unique)
+]
+interface ISDKLoginUser : ISDKContact{
+};
+
+[
+	object,
+	uuid(0D9A32D6-F1F2-402d-A3A3-3A0DB7D82BE1),
+	dual,
+	nonextensible,
+	helpstring("ISDKLoginUser2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKLoginUser2 : IDispatch
+{
+	[id(1), helpstring("method GetUserID")] HRESULT GetUserID([in] LONG lPluginCookie,[out,retval] BSTR* pbstrUID);
+};
+
+[
+	object,
+	uuid(BD3F22F7-17D7-48ba-977F-DB27B9A01905),
+	dual,
+	nonextensible,
+	helpstring("ISDKLoginUser3 Interface"),
+	pointer_default(unique)
+]
+interface ISDKLoginUser3 : ISDKLoginUser2
+{
+	[id(2), helpstring("method GetWangID")] HRESULT GetWangID([in] LONG lPluginCookie,[out,retval] BSTR* pbstrWangID);
+	[id(3), helpstring("method GetSiteID")] HRESULT GetSiteID([in] LONG lPluginCookie,[out,retval] BSTR* pbstrSiteID);
+	[id(4), helpstring("method GetSiteName")] HRESULT GetSiteName([in] LONG lPluginCookie,[out,retval] BSTR* pbstrSiteName);
+	[id(5), helpstring("method GetNickName")] HRESULT GetNickName([in] LONG lPluginCookie,[out,retval] BSTR* pbstrNickName);
+	[id(6), helpstring("method GetActivitiesLevel")] HRESULT GetActivitiesLevel([in] LONG lPluginCookie,[out,retval] LONG* pLevel);
+	[id(7), helpstring("method GetServerTime")] HRESULT GetServerTime([in] LONG lPluginCookie,[out,retval] BSTR* pTime);	
+
+};
+
+[
+	object,
+	uuid(8AF60758-10D7-45B1-B756-98FB7BD0B91C),
+	dual,
+	nonextensible,
+	helpstring("ISDKChatDlgMgr Interface"),
+	pointer_default(unique)
+]
+interface ISDKChatDlgMgr : IDispatch{
+	[id(1), helpstring("method GetChatDlgByUID")] 
+	HRESULT GetChatDlgByUID([in] BSTR bstrUID, [out,retval] ISDKChatDlg** ppChatDlg);
+
+	[id(2), helpstring("method GetApplication")] 
+	HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+
+	[id(3), helpstring("method GetChatDlgCollection")] 
+	HRESULT GetChatDlgCollection([out,retval] ISDKObjectCollection** ppChatDlgCollection);
+};
+
+[
+	object,
+	uuid(8AF53472-56D3-4838-BD3C-E8284E5C8D22),
+	dual,
+	nonextensible,
+	helpstring("ISDKChatDlgMgr2 Interface"),
+	pointer_default(unique)
+]
+
+interface ISDKChatDlgMgr2 : IDispatch{
+	[id(1), helpstring("method GetChatDlgByUID")] 
+	HRESULT GetChatDlgByUID([in] LONG lPluginCookie, [in] BSTR bstrUID, [out,retval] IDispatch** ppChatDlg);
+
+	[id(2), helpstring("method GetApplication")] 
+	HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+
+	[id(3), helpstring("method GetChatDlgCollection")] 
+	HRESULT GetChatDlgCollection([in] LONG lPluginCookie, [out,retval] ISDKObjectCollection** ppChatDlgCollection);
+};
+
+[
+	object,
+	uuid(1AE3F1AB-06ED-42C6-AEBB-87DA831BF73B),
+	dual,
+	nonextensible,
+	helpstring("ISDKObjectCollection Interface"),
+	pointer_default(unique)
+]
+interface ISDKObjectCollection : IDispatch{
+	[propget, id(1), helpstring("propert Count")] 
+	HRESULT Count([out, retval] LONG* lpCount);
+
+	[id(2), helpstring("method Add")] 
+	HRESULT Add([in] VARIANT var);
+
+	[id(3), helpstring("method Remove")] 
+	HRESULT Remove([in] LONG lIndex);
+
+	[id(4), helpstring("method RemoveAll")] 
+	HRESULT RemoveAll();
+
+	[propget,id(DISPID_VALUE)]
+	HRESULT Item([in] LONG lIndex , [out,retval] VARIANT* pVar);
+
+	[propget,id(DISPID_NEWENUM)]
+	HRESULT _NewEnum([out,retval] IEnumVARIANT** ppEnum);
+};
+
+[
+	object,
+	uuid(7974CE15-A974-48ce-AD3F-19C0A7F715DE),
+	dual,
+	nonextensible,
+	helpstring("ISDKSlot Interface"),
+	pointer_default(unique)
+]
+interface ISDKSlot : IDispatch{
+	[id(100), helpstring("method ShowItem")] HRESULT ShowItem([in] VARIANT_BOOL bShow, [in] LONG lItemCookie);
+	[id(101), helpstring("method EnableItem")] HRESULT EnableItem([in] VARIANT_BOOL bEnable, [in] LONG lItemCookie);
+};
+
+
+[
+	object,
+	uuid(993DB3B0-267E-4E44-A0E2-9A1E5BD810FD),
+	dual,
+	nonextensible,
+	helpstring("ISDKImportantPanelSlot Interface"),
+	pointer_default(unique)
+]
+interface ISDKImportantPanelSlot : ISDKSlot{
+	[id(1), helpstring("method GetMainFrame")] HRESULT GetMainFrame([out,retval] ISDKMainFrame** ppMainFrame);
+	[id(2), helpstring("method GetApplication")] HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+};
+
+[
+	object,
+	uuid(634B44B4-2BAD-4fdb-B563-A67931FEE0B2),
+	dual,
+	nonextensible,
+	helpstring("ISDKImportantPanelSlot2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKImportantPanelSlot2 : ISDKSlot{
+	[id(1), helpstring("method GetMainFrame")] HRESULT GetMainFrame([in] LONG lPluginCookie, [out,retval] IDispatch** ppMainFrame);
+	[id(12), helpstring("method GetApplication")] HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+};
+
+[
+	object,
+	uuid(4B5F9E91-8FDD-4C6A-8022-9149E3B1621B),
+	dual,
+	nonextensible,
+	helpstring("ISDKBottomPanelSlot Interface"),
+	pointer_default(unique)
+]
+interface ISDKBottomPanelSlot : ISDKSlot{
+	[id(1), helpstring("method GetMainFrame")] HRESULT GetMainFrame([out,retval] ISDKMainFrame** ppMainFrame);
+	[id(2), helpstring("method GetApplication")] HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+};
+
+[
+	object,
+	uuid(5B4CABFE-88C5-4c97-A274-5005C2AC2506),
+	dual,
+	nonextensible,
+	helpstring("ISDKBottomPanelSlot2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKBottomPanelSlot2 : ISDKSlot{
+	[id(1), helpstring("method GetMainFrame")] HRESULT GetMainFrame([in] LONG lPluginCookie, [out,retval] IDispatch** ppMainFrame);
+	[id(2), helpstring("method GetApplication")] HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+};
+
+[
+	object,
+	uuid(AA5DCAA9-441F-4922-A942-95BFB94F07D8),
+	dual,
+	nonextensible,
+	helpstring("ISDKChatDlg Interface"),
+	pointer_default(unique)
+]
+interface ISDKChatDlg : IDispatch{
+	[id(1), helpstring("method GetContact")] HRESULT GetActiveContact([out,retval] ISDKContact** ppContact);
+	[id(2), helpstring("method GetApplication")] HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+	[id(3), helpstring("method GetMainToolbarSlot")] HRESULT GetMainToolbarSlot([out,retval] ISDKIMChatMainToolbarSlot** ppMainToolbarSlot);
+	[id(4), helpstring("method GetInputToolbarSlot")] HRESULT GetInputToolbarSlot([out,retval] ISDKIMChatInputToolbarSlot** ppInputToolbarSlot);
+	[id(5), helpstring("method InsertText2InputBox")] HRESULT InsertText2InputBox([in] BSTR bstrUID, [in] BSTR bstrText, [in] LONG nType);
+};
+
+[
+	object,
+	uuid(8DF8A53D-9B4F-4df3-A622-CB80F1CCF683),
+	dual,
+	nonextensible,
+	helpstring("ISDKChatDlg2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKChatDlg2 : IDispatch{
+	[id(1), helpstring("method GetActiveContact")] HRESULT GetActiveContact([in] LONG lPluginCookie, [out,retval] IDispatch** ppContact);
+	[id(2), helpstring("method GetApplication")] HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+	[id(3), helpstring("method GetMainToolbarSlot")] HRESULT GetMainToolbarSlot([in] LONG lPluginCookie, [out,retval] IDispatch** ppMainToolbarSlot);
+	[id(4), helpstring("method GetInputToolbarSlot")] HRESULT GetInputToolbarSlot([in] LONG lPluginCookie, [out,retval] IDispatch** ppInputToolbarSlot);
+	[id(5), helpstring("method InsertText2InputBox")] HRESULT InsertText2InputBox([in] LONG lPluginCookie, [in] BSTR bstrUID, [in] BSTR bstrText, [in] LONG nType);
+};
+
+[
+	object,
+	uuid(CC6C4553-AC02-44f1-BF11-A552200785D1),
+	dual,
+	nonextensible,
+	helpstring("ISDKChatDlg3 Interface"),
+	pointer_default(unique)
+]
+interface ISDKChatDlg3 : ISDKChatDlg2{
+	[id(6), helpstring("插入插件的通知消息")] HRESULT InsertText2HistoryBox([in] LONG lPluginCookie, [in] BSTR contact_id, [in] BSTR notify_content, [in] VARIANT_BOOL bSysStyle);
+};
+
+[
+	object,
+	uuid(8DF5353F-BF01-4d9b-9457-D83112DE80A6),
+	dual,
+	nonextensible,
+	helpstring("IWWContact Interface"),
+	pointer_default(unique)
+]
+interface IWWContact : IDispatch{
+	[id(1), helpstring("method SetInGroup")] HRESULT SetInGroup([in] IDispatch* ppSDKGroup);
+};
+
+[
+	object,
+	uuid(6EA488D4-C187-4FCA-BBDA-0561179FCF9B),
+	dual,
+	nonextensible,
+	helpstring("ISDKContact Interface"),
+	pointer_default(unique)
+]
+interface ISDKContact : IDispatch{
+	[id(1), helpstring("method GetUserID")] HRESULT GetUserID([out,retval] BSTR* pbstrUID);
+};
+
+[
+	object,
+	uuid(1A2828AF-A6C6-4817-8D89-9183614B9155),
+	dual,
+	nonextensible,
+	helpstring("ISDKContact2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKContact2 : IDispatch{
+	[id(1), helpstring("method GetUserID")] HRESULT GetUserID([in] LONG lPluginCookie, [out,retval] BSTR* pbstrUID);	
+};
+
+[
+	object,
+	uuid(622E7D7B-1E85-452a-994C-828ED7CFC29C),
+	dual,
+	nonextensible,
+	helpstring("ISDKContact3 Interface"),
+	pointer_default(unique)
+]
+interface ISDKContact3 : ISDKContact2{	
+	[id(2), helpstring("method GetNickName")] HRESULT GetNickName([in] LONG lPluginCookie, [out,retval] BSTR* pNickName);
+	[id(3), helpstring("method GetSiteID")] HRESULT GetSiteID([in] LONG lPluginCookie, [out,retval] BSTR* pSiteID);
+	[id(4), helpstring("method GetSiteName")] HRESULT GetSiteName([in] LONG lPluginCookie, [out,retval] BSTR* pSiteName);
+	[id(5), helpstring("method GetInGroup")] HRESULT GetInGroup([in] LONG lPluginCookie, [out,retval] IDispatch** ppGroup);
+	[id(6), helpstring("method GetStatus")] HRESULT GetStatus([in] LONG lPluginCookie, [out,retval] enum SDKContactStatus* lpStatus);
+};
+
+[
+	object,
+	uuid(3A45437B-CC5C-4aa9-B843-E3A2F98433B7),
+	dual,
+	nonextensible,
+	helpstring("IWWIMChatSlot Interface"),
+	pointer_default(unique)
+]
+interface IWWIMChatSlot : IWWSlot{	
+	[id(1), helpstring("method SetChatDlg")]
+	HRESULT SetChatDlg([in] ISDKChatDlg* pChatDlg);
+};
+
+[
+	object,
+	uuid(F525BE7A-FBB4-4A7F-AD29-28262D7CB705),
+	dual,
+	nonextensible,
+	helpstring("ISDKIMChatInputToolbarSlot Interface"),
+	pointer_default(unique)
+]
+interface ISDKIMChatInputToolbarSlot : ISDKSlot{	
+	[id(1), helpstring("method GetChatDlg")] HRESULT GetChatDlg([out,retval] ISDKChatDlg** ppChatDlg);
+	[id(2), helpstring("method GetApplication")] HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+};
+
+[
+	object,
+	uuid(275CC9B8-0CA2-478c-812F-F4E42C06F1D0),
+	dual,
+	nonextensible,
+	helpstring("ISDKIMChatInputToolbarSlot2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKIMChatInputToolbarSlot2 : ISDKSlot{	
+	[id(10), helpstring("method GetChatDlg")] HRESULT GetChatDlg([in] LONG lPluginCookie, [out,retval] IDispatch** ppChatDlg);
+	[id(11), helpstring("method GetApplication")] HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+};
+
+
+[
+	object,
+	uuid(0F9AEEE4-A07F-4B95-B20F-A13B7FE164A1),
+	dual,
+	nonextensible,
+	helpstring("ISDKIMChatMainToolbarSlot Interface"),
+	pointer_default(unique)
+]
+interface ISDKIMChatMainToolbarSlot : ISDKSlot{
+	[id(1), helpstring("method GetChatDlg")] HRESULT GetChatDlg([out,retval] ISDKChatDlg** ppChatDlg);
+	[id(2), helpstring("method GetApplication")] HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+};
+
+[
+	object,
+	uuid(15716043-633C-4629-BF1C-5578590B52BD),
+	dual,
+	nonextensible,
+	helpstring("ISDKIMChatMainToolbarSlot2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKIMChatMainToolbarSlot2 : ISDKSlot{
+	[id(10), helpstring("method GetChatDlg")] HRESULT GetChatDlg([in] LONG lPluginCookie, [out,retval] IDispatch** ppChatDlg);
+	[id(11), helpstring("method GetApplication")] HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+};
+
+[
+	object,
+	uuid(A7A822AB-89F1-4442-99B5-63167008C8F7),
+	dual,
+	nonextensible,
+	helpstring("ISlotItemInfor 接口"),
+	pointer_default(unique)
+]
+interface ISlotItemInfor : IDispatch{
+	[propget, id(1), helpstring("属性 PluginId")] HRESULT PluginId([out, retval] ULONG* pVal);
+	[propput, id(1), helpstring("属性 PluginId")] HRESULT PluginId([in] ULONG newVal);
+	[propget, id(2), helpstring("属性 ItemId")] HRESULT ItemId([out, retval] ULONG* pVal);
+	[propput, id(2), helpstring("属性 ItemId")] HRESULT ItemId([in] ULONG newVal);
+	[propget, id(3), helpstring("属性 Style")] HRESULT Style([out, retval] ULONG* pVal);
+	[propput, id(3), helpstring("属性 Style")] HRESULT Style([in] ULONG newVal);
+	[propget, id(4), helpstring("属性 Name")] HRESULT Name([out, retval] BSTR* pVal);
+	[propput, id(4), helpstring("属性 Name")] HRESULT Name([in] BSTR newVal);
+	[propget, id(5), helpstring("属性 Title")] HRESULT Title([out, retval] BSTR* pVal);
+	[propput, id(5), helpstring("属性 Title")] HRESULT Title([in] BSTR newVal);
+	[propget, id(6), helpstring("属性 Tip")] HRESULT Tip([out, retval] BSTR* pVal);
+	[propput, id(6), helpstring("属性 Tip")] HRESULT Tip([in] BSTR newVal);
+	[propget, id(7), helpstring("属性 Width")] HRESULT Width([out, retval] LONG* pVal);
+	[propput, id(7), helpstring("属性 Width")] HRESULT Width([in] LONG newVal);
+	[propget, id(8), helpstring("属性 Height")] HRESULT Height([out, retval] LONG* pVal);
+	[propput, id(8), helpstring("属性 Height")] HRESULT Height([in] LONG newVal);
+	[propget, id(9), helpstring("属性 ImageFileName")] HRESULT ImageFileName([out, retval] BSTR* pVal);
+	[propput, id(9), helpstring("属性 ImageFileName")] HRESULT ImageFileName([in] BSTR newVal);
+	[propget, id(10), helpstring("属性 ImageItemCount")] HRESULT ImageItemCount([out, retval] LONG* pVal);
+	[propput, id(10), helpstring("属性 ImageItemCount")] HRESULT ImageItemCount([in] LONG newVal);
+	[propget, id(11), helpstring("属性 ModuleFileName")] HRESULT ModuleFileName([out, retval] BSTR* pVal);
+	[propput, id(11), helpstring("属性 ModuleFileName")] HRESULT ModuleFileName([in] BSTR newVal);
+	[propget, id(12), helpstring("属性 CLSID")] HRESULT CLSID([out, retval] BSTR* pVal);
+	[propput, id(12), helpstring("属性 CLSID")] HRESULT CLSID([in] BSTR newVal);
+	[id(13), helpstring("")] HRESULT EmptySubMenuItem();
+	[id(14), helpstring("")] HRESULT AddSubMenuItem([in] ULONG Id, [in] BSTR title, [in] BSTR image, [in] BSTR url);
+	[id(15), helpstring("")] HRESULT GetSubMenuItems([out, retval]ISDKObjectCollection **ppInforCol);
+	[propget, id(16), helpstring("属性 Url")] HRESULT Url([out, retval] BSTR* pVal);
+	[propput, id(16), helpstring("属性 Url")] HRESULT Url([in] BSTR newVal);
+	[propget, id(17), helpstring("属性 Execute module")] HRESULT ExecuteModule([out, retval] BSTR* pVal);
+	[propput, id(17), helpstring("属性 Execute module")] HRESULT ExecuteModule([in] BSTR newVal);
+	[propget, id(18), helpstring("属性 MenuIcon")] HRESULT MenuIcon([out, retval] BSTR* pVal);
+	[propput, id(18), helpstring("属性 MenuIcon")] HRESULT MenuIcon([in] BSTR newVal);
+	[id(19), helpstring("")] HRESULT GetUrlProperty([in] BSTR newVal, [out, retval] VARIANT* pVal);
+	[id(20), helpstring("")] HRESULT SetUrlProperty([in] BSTR newVal, [in] VARIANT val);
+
+	[id(21), helpstring("")] HRESULT EmptyNotifyMessage();
+	[id(22), helpstring("")] HRESULT AddNotifyMessage([in] enum SDKItemNotifyID msg);
+	[id(23), helpstring("")] HRESULT GetNotifyMessages([out, retval]ISDKObjectCollection **ppInforCol);
+
+	[propget, id(24), helpstring("属性 slot id")] HRESULT SlotId([out, retval] ULONG* pVal);
+	[propput, id(24), helpstring("属性 slot id")] HRESULT SlotId([in] ULONG newVal);
+
+	[id(25), helpstring("")] HRESULT GetExecuteModuleProperty([in] BSTR newVal, [out, retval] VARIANT* pVal);
+	[id(26), helpstring("")] HRESULT SetExecuteModuleProperty([in] BSTR newVal, [in] VARIANT val);
+	[id(27), helpstring("method IsLoadBeforeLogin")] HRESULT IsLoadBeforeLogin([out,retval] VARIANT_BOOL* pvbPreload);
+
+	[propget, id(28), helpstring("属性 FacadeCLSID")] HRESULT FacadeCLSID([out, retval] BSTR* pVal);
+	[propput, id(28), helpstring("属性 FacadeCLSID")] HRESULT FacadeCLSID([in] BSTR newVal);
+	[propget, id(29), helpstring("property ItemType")] HRESULT ItemType([out, retval] enum SDKItemType* pVal);
+	[propput, id(29), helpstring("property ItemType")] HRESULT ItemType([in] enum SDKItemType newVal);
+};
+
+[
+	object,
+	uuid(20C62234-7A48-4F4A-B22D-4507098035C7),
+	dual,
+	nonextensible,
+	helpstring("ISDKMainMenuSlot Interface"),
+	pointer_default(unique)
+]
+interface ISDKMainMenuSlot : ISDKSlot
+{
+	[id(1), helpstring("method GetApplication")] HRESULT GetApplication([out,retval] ISDKApplication** ppApplication);
+};
+
+[
+	object,
+	uuid(ECDB44F2-838E-4615-9C5C-B289FD2E07B9),
+	dual,
+	nonextensible,
+	helpstring("ISDKMainMenuSlot2 Interface"),
+	pointer_default(unique)
+]
+interface ISDKMainMenuSlot2 : ISDKSlot
+{
+	[id(2), helpstring("method GetApplication2")] HRESULT GetApplication([in] LONG lPluginCookie, [out,retval] IDispatch** ppApplication);
+};
+
+// lmzhang 2008-10-13 from rvmin
+[
+	object,
+	uuid(E51EB2AA-3963-4F34-87F8-59814B36AD36),
+	dual,
+	nonextensible,
+	helpstring("IPluginMgr 接口"),
+	pointer_default(unique)
+]
+interface IPluginMgr : IDispatch{
+	[id(1), helpstring("方法GetInstalledPluginIds")] HRESULT GetInstalledPluginIds([out,retval] BSTR* PluginIds);
+	[id(2), helpstring("方法GetPluginName")] HRESULT GetPluginName([in] BSTR PluginId, [out,retval] BSTR* PluginName);
+	[id(3), helpstring("方法GetPluginDescription")] HRESULT GetPluginDescription([in] BSTR PluginId, [out,retval] BSTR* PluginDescription);
+	[id(4), helpstring("方法GetPluginCategoryId")] HRESULT GetPluginCategoryId([in] BSTR PluginId, [out,retval] BSTR* PluginCategoryId);
+	[id(5), helpstring("方法GetPluginPictureFile")] HRESULT GetPluginPictureFile([in] BSTR PluginId, [out,retval] BSTR* PictureFile);
+	[id(6), helpstring("方法GetPluginTitle")] HRESULT GetPluginTitle([in] BSTR PluginId, [out,retval] BSTR* PluginTitle);
+	[id(7), helpstring("获得帮助的URL,可能是诸如 http:\\... 也可能是文件的绝对路径比如 F:\dir\...")] HRESULT GetPluginHelpUrl([in] BSTR PluginId, [out,retval] BSTR* PluginHelpUrl);
+	[id(8), helpstring("方法GetPluginClassId")] HRESULT GetPluginClassId([in] BSTR PluginId, [out,retval] CLSID* PluginClassId);
+	[id(9), helpstring("方法GetPluginPath")] HRESULT GetPluginPath([in] BSTR PluginId, [out,retval] BSTR* PluginPath);
+	[id(10), helpstring("方法GetPluginHasOptions")] HRESULT GetPluginHasOptions([in] BSTR PluginId, [out,retval] VARIANT_BOOL* PluginHasOptions);
+	[id(11), helpstring("方法IsPluginRunning")] HRESULT IsPluginRunning([in] BSTR PluginId, [out,retval] VARIANT_BOOL* Running);
+	[id(12), helpstring("方法StartupPlugin")] HRESULT StartupPlugin([in] BSTR PluginId);
+	[id(13), helpstring("方法ShutdownPlugin")] HRESULT ShutdownPlugin([in] BSTR PluginId);
+	[id(14), helpstring("方法ShowPluginOptions")] HRESULT ShowPluginOptions([in] BSTR PluginId);
+	[id(15), helpstring("方法DeletePlugin")] HRESULT DeletePlugin([in] BSTR PluginId);
+	[id(16), helpstring("方法AddNewPlugin")] HRESULT AddNewPlugin([in] BSTR PluginName);
+	[id(17), helpstring("方法StartupMultiPlugins")] HRESULT StartupMultiPlugins([in] BSTR ConfigFile,[in] BSTR userpluginorderpath);
+	[id(18), helpstring("获取插件的版本")] HRESULT GetPluginVersion([in] BSTR PluginId, [out,retval] BSTR* plugin_version);
+	[id(19), helpstring("初始化")] HRESULT Init([in] BSTR pluginDir,[in] BSTR globalpluginorderpath,[in] BSTR userpluginorderpath);
+	[id(20), helpstring("Disable 所有插件")] HRESULT DisableAllPlugins([in] VARIANT_BOOL vbSave);
+	[id(21), helpstring("刷新")] HRESULT Refresh();
+	[id(22), helpstring("订购插件")] HRESULT PurchasePlugin([in] BSTR PluginId, [in] BSTR reserved);
+	[id(23), helpstring("续订插件")] HRESULT PurchasePluginAgain([in] BSTR PluginId, [in] BSTR reserved);
+	[id(24), helpstring("获得插件属性")] HRESULT GetPluginProperty([in] BSTR pluginId, [in] BSTR propertyName, [out]BSTR *value);	
+	[id(25), helpstring("获取slotname,pluginid,itemid对应的order")] HRESULT GetPluginOrderInSlot([in] BSTR PluginSlotName,[in] BSTR PluginId,[in] BSTR PluginItemId ,[out,retval] INT* PluginOrder);
+	[id(26), helpstring("获取slotname,pluginsecurityid,item对应的order")] HRESULT GetPluginOrderInSlotBySecurityID([in] BSTR PluginSlotName,[in] BSTR PluginSecurityId,[in] BSTR PluginItemId,[out,retval] INT* PluginOrder);
+	[id(27), helpstring("获取 pluginids 对应的 orders")] HRESULT GetPluginOrdersInSlot([in] BSTR PluginSlotName,[in] BSTR PluginIdsItems,[out,retval] BSTR* PluginIdsItemsOrders);
+	[id(28), helpstring("保存 pluginids 对应的 orders")] HRESULT SaveOrder([in] BSTR sPluginId, [in] BSTR itemIds, [in] VARIANT_BOOL bAddOrErase);
+	[id(29), helpstring(" ")] HRESULT DisablePlugin([in] BSTR sPluginId);
+	[id(30), helpstring(" ")] HRESULT EnablePlugin([in] BSTR sPluginId);
+	[id(31), helpstring(" ")] HRESULT isDisablePlugin([in] BSTR sPluginId, [out,retval] VARIANT_BOOL* disable);
+	[id(32), helpstring(" ")] HRESULT DeletePluginOrder([in] BSTR sPluginId);
+	[id(33), helpstring("保存 pluginids 对应的 orders")] HRESULT SaveOrder2([in] BSTR sPluginId, [in] BSTR sSlotName, [in] ULONG itemId, [in] VARIANT_BOOL bAddOrErase);
+
+	[id(34), helpstring("方法StartupPluginManual")] HRESULT StartupPluginManual([in] BSTR PluginId);
+	
+	// lmzhang added for adapting oldlogic
+	[id(100), helpstring("初始化2")] HRESULT Init2([in] BSTR pluginDir,[in] BSTR globalpluginorderpath,[in] BSTR userpluginorderpath);
+	[id(101), helpstring("Post初始化2")] HRESULT PostInit2();
+
+};
+// end
+
+[
+	object,
+	uuid(58A60582-AA00-44d9-8E41-EB272395D0B8),
+	dual,
+	nonextensible,
+	helpstring("IPluginMgrV2 Interface"),
+	pointer_default(unique)
+]
+interface IPluginMgrV2 : IDispatch{
+	[id(1), helpstring("")] HRESULT Initialize();
+	[id(2), helpstring("")] HRESULT GetItemInfor([in] enum SDKSlotID SlotID, [out, retval] ISDKObjectCollection **ppInforCol);
+	[id(3), helpstring("")] HRESULT GetPluginItemInfor([in] ULONG pluginId, [in] enum SDKSlotID SlotID, [out, retval] ISDKObjectCollection **ppInforCol);
+	[id(4), helpstring("方法 UnloadPlugin")] HRESULT UnloadPlugin([in] ULONG pluginId);
+	[id(5), helpstring("方法 InstallPlugin")] HRESULT InstallPlugin([in] BSTR pluginPath);	
+	[id(6), helpstring("方法 GetItemOrderIndex")] HRESULT GetItemOrderIndex([in] ULONG pluginId, [in] ULONG itemId, [out, retval] ULONG *pIndex);
+	[id(7), helpstring("方法 GetPluginPath")] HRESULT GetPluginPath([in] ULONG pluginId, [out,retval] BSTR* path);
+	[id(8), helpstring("方法 isLoaded")] HRESULT isLoaded([in]ULONG pluginId, [out,retval] VARIANT_BOOL *pVal);
+	[id(9), helpstring("方法 GetInstalledPlugins")] HRESULT GetInstalledPlugins([out,retval] BSTR* ids);
+	[id(10), helpstring("方法 GetPluginHasOptions")] HRESULT GetPluginHasOptions([in] ULONG pid, [out,retval] VARIANT_BOOL *pHas);
+	[id(11), helpstring("方法 ShowPluginOptions")] HRESULT ShowPluginOptions([in] ULONG bstrPluginId);
+//	[id(12), helpstring("方法 PurchasePluginAgain")] HRESULT PurchasePluginAgain([in] ULONG bstrPluginId);
+//	[id(13), helpstring("方法 PurchasePlugin")] HRESULT PurchasePlugin([in] ULONG bstrPluginId);
+	[id(14), helpstring("方法DisablePlugin")] HRESULT DisablePlugin([in] ULONG pluginId);
+	[id(15), helpstring("方法EnablePlugin")] HRESULT EnablePlugin([in] ULONG pluginId);
+	[id(16), helpstring("  ")] HRESULT StopPlugin([in] ULONG pluginId);
+	[id(17), helpstring("删除插件")] HRESULT DeletePlugin([in] ULONG pluginId);
+	[id(18), helpstring("测试Free属性")] HRESULT isFree([in] ULONG pluginId, [out,retval] VARIANT_BOOL *pFree);	
+	[id(19), helpstring("method GetAppID")] HRESULT GetAppID([in] LONG lPluginCookie, [out,retval] LONG* lpAppID);
+	[id(20), helpstring("method GetPluginSecurityLevel")] HRESULT GetPluginSecurityLevel([in] LONG lPluginCookie, [out,retval] enum SDKSecurityLevel* pRet);
+	[id(21), helpstring("method GetServiceLevel")] HRESULT GetServiceLevel([in] BSTR bstrServiceName, [out,retval] enum SDKSecurityLevel* pLevel);
+	[id(22), helpstring("method CheckServiceLevel")] HRESULT CheckServiceLevel([in] BSTR bstrServiceName, [in]LONG lPluginCookie,[out,retval]VARIANT_BOOL* vbResult);
+	[id(23), helpstring("method UpdateSvrInfo")] HRESULT UpdateSvrInfo([in] LONG lReesrved);
+//	[id(24), helpstring("method 插件处理消息")] HRESULT ExecuteSyncFilterChatMessage([in] IDispatch *pMsg);
+	[id(25), helpstring("方法GetPluginInSlotPos")] HRESULT GetPluginInSlotPos([in] BSTR sPluginId, [out,retval] BSTR* sPluginSlotPos);
+	[id(26), helpstring("GetPluginTitle")] HRESULT GetPluginTitle([in] LONG cookie, [out,retval] BSTR *title);
+	[id(27), helpstring("  ")] HRESULT DestroyPlugin([in] ULONG pluginId);
+};
+
+/*
+
+// {2CBB072B-C263-4b95-BDA0-884F05D77C24}
+IMPLEMENT_OLECREATE(<<class>>, <<external_name>>, 
+0x2cbb072b, 0xc263, 0x4b95, 0xbd, 0xa0, 0x88, 0x4f, 0x5, 0xd7, 0x7c, 0x24);
+
+*/
+[
+	object,
+	uuid(7CAF158C-4082-44bb-9BEA-391680694D71),
+	dual,
+	nonextensible,
+	helpstring("IPluginMgrV3 Interface"),
+	pointer_default(unique)
+]
+interface IPluginMgrV3 : IPluginMgrV2{
+	[id(100), helpstring("method GetPluginInfoV3")] HRESULT GetPluginInfoV3([in] LONG lAppID, [out,retval] IDispatch** ppPluginInfo);
+	[id(101), helpstring("method GetPluginProxy")] HRESULT GetPluginProxy([in] LONG lAppID, [out,retval] IDispatch** ppPluginProxy);	
+	[id(102), helpstring("method GetPluginLoader")] HRESULT CreatePluginInLoader([in] LONG lAppID,[in]LONG lPluginCookie,[in] LONG lRunMode, [in] IDispatch* pPluginInfo,[out,retval] IDispatch** ppPluginStub);
+	[id(103), helpstring("method NotifyLoaderExit")] HRESULT NotifyLoaderExit([in]LONG lRunMode);
+	[id(104), helpstring("method HandleNoReportLoader")] HRESULT HandleNoReportLoader([in] LONG lRunMode);
+	[id(105), helpstring("method HandleDisappearLoader")] HRESULT HandleDisappearLoader([in] LONG lRunMode);
+	[id(106), helpstring("method GetIWWPluginMonitor")] HRESULT GetIWWPluginMonitor([out, retval] IDispatch **ppMonitor);
+	[id(107), helpstring("method GetISDKApplication")] HRESULT GetISDKApplication([out, retval] IDispatch **ppSDKApplication);
+	[id(108), helpstring("method InternalBrowserUrl")] HRESULT InternalBrowserUrl([in] BSTR url);
+	[id(109), helpstring("method GetProessId")] HRESULT GetProessId([out, retval] LONG *pProcId);
+	[id(110), helpstring("")] HRESULT GetOrderOptimize([in] LONG nAppId, [out, retval] LONG *pValue);	
+	[id(111), helpstring("")] HRESULT IsPluginDisable([in] LONG nAppId, [out, retval] VARIANT_BOOL *pvbDisable);	
+	[id(112), helpstring("method GetAepQuery")] HRESULT GetSubsInfoFromDB([in] BSTR appId, [in] BSTR userId, [out, retval] ISDKPluginQueryResult2 **ppQueryRet2);
+	[id(113), helpstring("method SDKBrowserUrl")] HRESULT SDKBrowserUrl([in] BSTR url);
+	[id(114), helpstring("method SDKTransUrl")] HRESULT SDKTransUrl([in] BSTR srcUrl, [out, retval] BSTR *pDestUrl);
+};
+
+[
+	object,
+	uuid(1C588FFF-2F76-42fd-9AAF-E16F5FA2B48B),
+	dual,
+	nonextensible,
+	helpstring("IWWApplication Interface"),
+	pointer_default(unique)
+]
+interface IWWApplication : IDispatch{
+	[id(1), helpstring("method OnMainMenuSlotCreated")] 
+	HRESULT OnMainMenuSlotCreated([in] IPluginMgrV2* pPluginMgr , [out,retval] ISDKMainMenuSlot** ppMainMenuSlot);
+
+	[id(2), helpstring("method OnMainMenuSlotDestroyed")]
+	HRESULT OnMainMenuSlotDestroyed([in] IPluginMgrV2* pPluginMgr);
+
+	[id(3), helpstring("GetAepQuery")]
+	HRESULT GetAepQuery([out, retval] IWWAEP_PluginQuery** ppQuery);
+
+	[id(4), helpstring("method GetPluginMgr")] HRESULT GetPluginMgr([out,retval] IPluginMgrV2** ppPluginMgr);
+
+	[id(5), helpstring("method GetLoginUser")] HRESULT GetLoginUser([out,retval] BSTR* bstrLoginUser);
+
+	[id(6), helpstring("method OnLogout")] HRESULT OnLogout();
+
+	[id(7), helpstring("method GetVersion")] HRESULT GetVersion([out] BSTR* bstrDispVersion, [out] LONG *pVersion);
+};
+
+[
+	object,
+	uuid(48B67E83-644A-444c-8247-29F6B4370034),
+	dual,
+	nonextensible,
+	helpstring("IWWSlot Interface"),
+	pointer_default(unique)
+]
+interface IWWSlot : IDispatch
+{
+	[id(1), helpstring("method OnInitialize")] 
+	HRESULT OnInitialize([in] IPluginMgrV2* pPluginMgr);
+
+	[id(2), helpstring("method OnDestroy")] 
+	HRESULT OnDestroy([in] IPluginMgrV2* pPluginMgr) ;
+
+	[id(3), helpstring("method OnInstalledPlugin")] 
+	HRESULT OnInstalledPlugin([in] ULONG PluginID , [in] IPluginMgrV2* pPluginMgr);
+
+	[id(4), helpstring("method OnRemovePlugin")] 
+	HRESULT OnRemovePlugin([in] ULONG PluginID , [in] IPluginMgrV2* pPluginMgr);
+
+	[id(5), helpstring("method OnNotify")] 
+	HRESULT OnNotify([in] ULONG NotifyId, [in] IDispatch* pParam);
+	[id(6), helpstring("")]
+	HRESULT HighLight([in] LONG nPluginId, [in] LONG nItemId);
+}
+
+[
+	object,
+	uuid(21169F5C-7745-41ff-A728-6FAAAC96E9D2),
+	dual,
+	nonextensible,
+	helpstring("IWWChatDlg Interface"),
+	pointer_default(unique)
+]
+interface IWWChatDlg : IDispatch
+{
+	[id(1), helpstring("method OnMainToolbarSlotCreated")] 
+	HRESULT OnMainToolbarSlotCreated([in] IPluginMgrV2* pPluginMgr , [out,retval] ISDKIMChatMainToolbarSlot** ppMainToolbarSlot);
+
+	[id(2), helpstring("method OnMainToolbarSlotDestroyed")] 
+	HRESULT OnMainToolbarSlotDestroyed([in] IPluginMgrV2* pPluginMgr);
+
+	[id(3), helpstring("method OnInputToolbarSlotCreated")] 
+	HRESULT OnInputToolbarSlotCreated([in] IPluginMgrV2* pPluginMgr , [out,retval] ISDKIMChatInputToolbarSlot** ppInputToolbarSlot);
+
+	[id(4), helpstring("method OnInputToolbarSlotDestroyed")] 
+	HRESULT OnInputToolbarSlotDestroyed([in] IPluginMgrV2* pPluginMgr);
+
+	[id(5), helpstring("method SetContact")] 
+	HRESULT SetContact([in] BSTR bstrContactUID);
+
+	[id(6), helpstring("method IsContactInChat")] HRESULT IsContactInChat([in] BSTR bstrUID, [out,retval] VARIANT_BOOL* bIn);
+
+	[id(7), helpstring("method IsSingleChat")] HRESULT IsSingleChat([in] BSTR bstrUID, [out,retval] VARIANT_BOOL* bIn);
+
+	[id(8), helpstring("method GetGroupID")] HRESULT GetGroupID([out,retval] BSTR* pbstrGroupID);
+	
+};
+
+[
+	object,
+	uuid(398FC5FB-96BD-4046-83AE-55A4206DAA8E),
+	dual,
+	nonextensible,
+	helpstring("IWWChatDlgMgr Interface"),
+	pointer_default(unique)
+]
+interface IWWChatDlgMgr : IDispatch
+{
+	[id(1), helpstring("method OnChatDlgCreated")] 
+	HRESULT OnChatDlgCreated([in] BSTR bstrUID , [out,retval] ISDKChatDlg** ppChatDlg);
+
+	[id(2), helpstring("method OnChatDlgDestroyed")] 
+	HRESULT OnChatDlgDestroyed([in] BSTR bstrUID);
+
+	[id(3), helpstring("method OnLogout")]
+	HRESULT OnLogout();
+};
+
+[
+	object,
+	uuid(14834560-634A-4c05-81A3-6078EC802162),
+	dual,
+	nonextensible,
+	helpstring("IWWMainFrame Interface"),
+	pointer_default(unique)
+]
+interface IWWMainFrame : IDispatch
+{
+	[id(1), helpstring("method OnImportantPanelCreated")] 
+	HRESULT OnImportantPanelCreated([in] IPluginMgrV2* pPluginMgr , [out,retval] ISDKImportantPanelSlot** ppImportantSlot);
+
+	[id(2), helpstring("method OnImportantPanelDestroyed")] 
+	HRESULT OnImportantPanelDestroyed([in] IPluginMgrV2* pPluginMgr);
+
+	[id(3), helpstring("method OnBottomPanelCreated")] 
+	HRESULT OnBottomPanelCreated([in] IPluginMgrV2* pPluginMgr , [out,retval] ISDKBottomPanelSlot** ppImportantSlot);
+
+	[id(4), helpstring("method OnImportantPanelDestroyed")] 
+	HRESULT OnBottomPanelDestroyed([in] IPluginMgrV2* pPluginMgr);
+};
+
+[
+	object,
+	uuid(D3880504-4B4B-4DD3-AA7E-E9956B72B83A),
+	dual,
+	nonextensible,
+	helpstring("ISDKNotifyUserLogin Interface"),
+	pointer_default(unique)
+]
+interface ISDKNotifyUserLogin : IDispatch{
+
+	[propget, id(1), helpstring("属性 userId")] HRESULT userId([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("属性 userId")] HRESULT userId([in] BSTR newVal);
+};
+[
+	object,
+	uuid(E7315843-A3C1-4081-9747-5FB92EC36F0F),
+	dual,
+	nonextensible,
+	helpstring("ISDKNotifyOffline Interface"),
+	pointer_default(unique)
+]
+interface ISDKNotifyOffline : IDispatch{
+};
+[
+	object,
+	uuid(163A7C81-AF7A-4972-9FD5-52E1A92A65EA),
+	dual,
+	nonextensible,
+	helpstring("ISubMenuItemInfo 接口"),
+	pointer_default(unique)
+]
+interface ISubMenuItemInfo : IDispatch{
+	[propget, id(1), helpstring("属性 id")] HRESULT Id([out, retval] ULONG* pVal);
+	[propput, id(1), helpstring("属性 id")] HRESULT Id([in] ULONG newVal);
+	[propget, id(2), helpstring("属性 title")] HRESULT Title([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("属性 title")] HRESULT Title([in] BSTR newVal);
+	[propget, id(3), helpstring("属性 image")] HRESULT Image([out, retval] BSTR* pVal);
+	[propput, id(3), helpstring("属性 image")] HRESULT Image([in] BSTR newVal);
+	[propget, id(4), helpstring("属性 url")] HRESULT Url([out, retval] BSTR* pVal);
+	[propput, id(4), helpstring("属性 url")] HRESULT Url([in] BSTR newVal);
+};
+[
+	object,
+	uuid(9E1DA6CB-30E2-45ED-88D1-5324F4DF0C1D),
+	dual,
+	nonextensible,
+	helpstring("ISDKNotifyChatMessage 接口"),
+	pointer_default(unique)
+]
+interface ISDKNotifyChatMessage : IDispatch{
+	[propget, id(1), helpstring("属性 userId")] HRESULT userId([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("属性 userId")] HRESULT userId([in] BSTR newVal);
+	[propget, id(2), helpstring("属性 textMessage")] HRESULT textMessage([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("属性 textMessage")] HRESULT textMessage([in] BSTR newVal);
+	[propget, id(3), helpstring("属性 receive")] HRESULT receive([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(3), helpstring("属性 receive")] HRESULT receive([in] VARIANT_BOOL newVal);
+};
+[
+	object,
+	uuid(B90C9697-AF48-41CB-8AC2-2100D8DBED2C),
+	dual,
+	nonextensible,
+	helpstring("ISDKNotifyShowOption Interface"),
+	pointer_default(unique)
+]
+interface ISDKNotifyShowOption : IDispatch{
+};
+[
+	object,
+	uuid(B7E2380A-8C04-4E41-8418-3ED3F9A34000),
+	dual,
+	nonextensible,
+	helpstring("ISDKNotifyContactTabChanging Interface"),
+	pointer_default(unique)
+]
+interface ISDKNotifyContactTabChanging : IDispatch{
+	[propget, id(1), helpstring("property OldContact")] HRESULT OldContact([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("property OldContact")] HRESULT OldContact([in] BSTR newVal);
+	[propget, id(2), helpstring("property NewContact")] HRESULT NewContact([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("property NewContact")] HRESULT NewContact([in] BSTR newVal);
+};
+[
+	object,
+	uuid(1D9285ED-C9E8-40D4-8149-8EC3221DAA37),
+	dual,
+	nonextensible,
+	helpstring("ISDKNotifyContactTabChanged Interface"),
+	pointer_default(unique)
+]
+interface ISDKNotifyContactTabChanged : IDispatch{
+	[propget, id(1), helpstring("property OldContact")] HRESULT OldContact([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("property OldContact")] HRESULT OldContact([in] BSTR newVal);
+	[propget, id(2), helpstring("property NewContact")] HRESULT NewContact([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("property NewContact")] HRESULT NewContact([in] BSTR newVal);
+};
+/*[
+	object,
+	uuid(844D79C3-2E52-478F-8139-135AB660D9C1),
+	dual,
+	nonextensible,
+	helpstring("ISDKNotifyCustomOrder Interface"),
+	pointer_default(unique)
+]
+interface ISDKNotifyCustomOrder : IDispatch{
+	[propget, id(1), helpstring("property OrderOption")] HRESULT OrderOption([out, retval] enum SDKCustomOrderOption* pVal);
+	[propput, id(1), helpstring("property OrderOption")] HRESULT OrderOption([in] enum SDKCustomOrderOption newVal);
+};*/
+[
+	object,
+	uuid(D3508402-65C2-4490-866D-9CAC55FBB770),
+	dual,
+	nonextensible,
+	helpstring("IWWPluginKey Interface"),
+	pointer_default(unique)
+]
+interface IWWPluginKey : IDispatch{
+	[propget, id(1), helpstring("property AppID")] HRESULT AppID([out, retval] LONG* pVal);
+	[propput, id(1), helpstring("property AppID")] HRESULT AppID([in] LONG newVal);
+	[propget, id(2), helpstring("property Version")] HRESULT Version([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("property Version")] HRESULT Version([in] BSTR newVal);
+	[propget, id(3), helpstring("property PluginInfoFlag")] HRESULT PluginInfoFlag([out, retval] LONG* pVal);
+	[propput, id(3), helpstring("property PluginInfoFlag")] HRESULT PluginInfoFlag([in] LONG newVal);
+};
+
+[
+	object,
+	uuid(67E25B01-8EE1-45FA-8F8B-D583594F5C54),
+	dual,
+	nonextensible,
+	helpstring("IWWPluginQueryRes 接口"),
+	pointer_default(unique)
+]
+interface IWWPluginQueryRes : IDispatch{
+	[propget, id(1), helpstring("属性 AppId")] HRESULT AppId([out, retval] LONG* pID);
+	[propput, id(1), helpstring("属性 AppId")] HRESULT AppId([in] LONG id);
+
+	[propget, id(2), helpstring("属性 Version")] HRESULT Version([out, retval]BSTR* pVersion);
+	[propput, id(2), helpstring("属性 Version")] HRESULT Version([in]BSTR version);
+
+	[propget, id(3), helpstring("属性 SecurityLevel")] HRESULT SecurityLevel([out, retval]enum SDKSecurityLevel* pLevel);
+	[propput, id(3), helpstring("属性 SecurityLevel")] HRESULT SecurityLevel([in]enum SDKSecurityLevel level);
+
+	[propget, id(4), helpstring("属性 PluginXmlChecksum")] HRESULT PluginXmlChecksum([out, retval]BSTR* pChecksum);
+	[propput, id(4), helpstring("属性 PluginXmlChecksum")] HRESULT PluginXmlChecksum([in]BSTR checksum);
+
+	[propget, id(5), helpstring("property PluginInfoFlag")] HRESULT PluginInfoFlag([out, retval] LONG* pVal);
+	[propput, id(5), helpstring("property PluginInfoFlag")] HRESULT PluginInfoFlag([in] LONG newVal);
+};
+
+[
+	object,
+	uuid(6586EF06-F071-4944-8D13-1C198B943A47),
+	dual,
+	nonextensible,
+	helpstring("ISDKGroup 接口"),
+	pointer_default(unique)
+]
+interface ISDKGroup : IDispatch{
+	[id(1), helpstring("method GetParentGroup")] HRESULT GetParentGroup([in] LONG lPluginCookie, [out,retval] IDispatch** ppSDKGroup);
+	[id(2), helpstring("method GetSubGroupCollection")] HRESULT GetSubGroupCollection([in] LONG lPluginCookie, [out,retval] ISDKObjectCollection** ppGroupCollection);
+	[id(3), helpstring("method GetContactCollection")] HRESULT GetContactCollection([in] LONG lPluginCookie, [out,retval] ISDKObjectCollection** ppContactCollection);
+	[id(4), helpstring("method GetGroupID")] HRESULT GetGroupID([in] LONG lPluginCookie, [out,retval] BSTR* pGroupID);
+	[id(5), helpstring("method GetGroupName")] HRESULT GetGroupName([in] LONG lPluginCookie, [out,retval] BSTR* pGroupName);
+};
+
+[
+	object,
+	uuid(3CB88DA5-C3E6-4b0e-8C08-0206426706DC),
+	dual,
+	nonextensible,
+	helpstring("IWWGroup 接口"),
+	pointer_default(unique)
+]
+interface IWWGroup : IDispatch{	
+	[id(1), helpstring("SetGroupInfo")] HRESULT SetGroupInfo([in] BSTR bstrGroupID);	
+};
+
+[
+	object,
+	uuid(DDB11430-F716-47FA-8546-B4DFFEF8CCF9),
+	dual,
+	nonextensible,
+	helpstring("IWWPluginMonitor Interface"),
+	pointer_default(unique)
+]
+interface IWWPluginMonitor : IDispatch{
+	[id(1), helpstring("method Init")] HRESULT Init([in] IDispatch* spPluginMgr);
+	[id(2), helpstring("method UnInit")] HRESULT UnInit(void);
+	[id(3), helpstring("方法Add")] HRESULT Add([in] IDispatch* pDisp);
+	[id(4), helpstring("方法Remove")] HRESULT Remove([in] IDispatch* pDisp);
+	[id(5), helpstring("方法ReportStatus")] HRESULT ReportStatus([in] IDispatch* pDisp);
+	[id(6), helpstring("方法ReportStatus")] HRESULT KillLoader([in] LONG lRunMode);
+};
+
+
+[
+	object,
+	uuid(25C46B70-081C-4FA1-8B73-8A6E0960DBB9),
+	dual,
+	nonextensible,
+	helpstring("IWWPluginProxy Interface"),
+	pointer_default(unique)
+]
+interface IWWPluginProxy : IDispatch{
+	[id(1), helpstring("method Init")] HRESULT Init([in] IDispatch* spPluginMgr, [in] LONG lAppID);
+	[id(2), helpstring("method UnInit")] HRESULT UnInit(void);
+	[id(3), helpstring("method AddItem")] HRESULT AddItem([in] BSTR bstrItemID, [in] IDispatch* pItemInfo, [in] IDispatch* pItemFacade);
+	[id(4), helpstring("method JITCreateItem")] HRESULT JITCreateItem([in] LONG lAppID, [in] BSTR bstrItemKey,[in] IDispatch* pIemInfo, [out,retval] IDispatch** ppRealItem);
+	[id(5), helpstring("method RemoveItem")] HRESULT RemoveItem([in] BSTR bstrItemID);
+	[id(6), helpstring("method StopPlugin")] HRESULT StopPlugin();
+};
+
+/*
+[
+	object,
+	uuid(64B22A77-3CEA-4500-8415-D0298396F2A7),
+	dual,
+	nonextensible,
+	helpstring("IWWPluginFacade Interface"),
+	pointer_default(unique)
+]
+interface IWWPluginFacade : ISDKPlguin2{
+};
+*/
+
+[
+	object,
+	uuid(5634A90C-B2B6-4A33-BBF9-8E75347A5B01),
+	dual,
+	nonextensible,
+	helpstring("IWWItemFacade Interface"),
+	pointer_default(unique)
+]
+interface IWWItemFacade : IDispatch{
+	[id(1), helpstring("method Init")] HRESULT Init([in] BSTR bstrItemKey, [in] IDispatch* pItemInfo);
+	[id(2), helpstring("method UnInit")] HRESULT UnInit(void);
+};
+
+[
+	object,
+	uuid(51B9A953-8DEC-43B9-A222-C37FB763B1CD),
+	dual,
+	nonextensible,
+	helpstring("IWWPluginInfo Interface"),
+	pointer_default(unique)
+]
+interface IWWPluginInfo : IDispatch{
+	[propget, id(1), helpstring("property AppID")] HRESULT AppID([out, retval] LONG* pVal);
+	[propput, id(1), helpstring("property AppID")] HRESULT AppID([in] LONG newVal);
+	[propget, id(2), helpstring("property SDKVersion")] HRESULT SDKVersion([out, retval] LONG* pVal);
+	[propput, id(2), helpstring("property SDKVersion")] HRESULT SDKVersion([in] LONG newVal);
+	[id(3), helpstring("method IsLoadBeforeLogin")] HRESULT IsLoadBeforeLogin([out,retval] VARIANT_BOOL* vbPreload);
+	[propget, id(4), helpstring("property Preload")] HRESULT Preload([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(4), helpstring("property Preload")] HRESULT Preload([in] VARIANT_BOOL newVal);
+	[propget, id(5), helpstring("property AutoSubscribe")] HRESULT AutoSubscribe([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(5), helpstring("property AutoSubscribe")] HRESULT AutoSubscribe([in] VARIANT_BOOL newVal);
+	[propget, id(6), helpstring("property RunMode")] HRESULT RunMode([out, retval] LONG* pVal);
+	[propput, id(6), helpstring("property RunMode")] HRESULT RunMode([in] LONG newVal);
+	[propget, id(7), helpstring("property PluginGUID")] HRESULT PluginGUID([out, retval] BSTR* pVal);
+	[propput, id(7), helpstring("property PluginGUID")] HRESULT PluginGUID([in] BSTR newVal);
+	[propget, id(8), helpstring("property PluginType")] HRESULT PluginType([out, retval] enum SDKPluginType* pVal);
+	[propput, id(8), helpstring("property PluginType")] HRESULT PluginType([in] enum SDKPluginType newVal);
+	[propget, id(9), helpstring("property ConfigFile")] HRESULT ConfigFile([out, retval] BSTR* pVal);
+	[propput, id(9), helpstring("property ConfigFile")] HRESULT ConfigFile([in] BSTR newVal);
+	[propget, id(10), helpstring("property Silent")] HRESULT Silent([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(10), helpstring("property Silent")] HRESULT Silent([in] VARIANT_BOOL newVal);
+};
+[
+	uuid(044FEC04-C415-40AF-AD34-F44F62DA65A3),
+	version(1.0),
+	helpstring("wwsdkcom 1.0 Type Library")
+]
+library wwsdkcomLib
+{
+	importlib("stdole2.tlb");
+
+	[
+	object,
+	uuid(9BC790B6-D01F-443c-B2FF-FA0DD571B5F2),
+	dual,
+	nonextensible,
+	helpstring("IAEP_PluginQueryNotify 接口"),
+	pointer_default(unique)
+	]
+	interface IAEP_PluginQueryNotify : IDispatch{
+		[id(1), helpstring("方法 OnComplete")] HRESULT OnComplete([in] IDispatch *pNotify);
+	};
+
+	[
+		uuid(15441836-1D39-4D25-AC37-CD4798C2E2B1),
+		helpstring("AEP_PluginQuery Class")
+	]
+	coclass AEP_PluginQuery
+	{
+		[default] interface IWWAEP_PluginQuery;
+		interface IWWAEP_PluginQuery2;
+	}; 
+	[
+		uuid(ED14F852-C522-41CF-9CFB-177190DAFE66),
+		helpstring("SDKPluginQueryResult Class")
+	]
+	coclass SDKPluginQueryResult
+	{
+		[default] interface ISDKPluginQueryResult;
+		interface ISDKPluginQueryResult2;
+		//interface IWWPluginQueryResult;
+	};
+
+	
+/*	enum SDKResult
+	{
+		SDKRESULT_OK			=	0,
+		SDKRESULT_TOO_LONG_SIGNATURE	   = 1,
+		SDKRESULT_INVALID_MSGID		=	2,
+		SDKRESULT_INVALID_ARG			= 3,
+		SDKRESULT_EXIST_MSGHANDLER	=	4,
+		SDKRESULT_ERROR_NOT_IMPL	= 5,
+		SDKRESULT_ERROR_NOUID		= 6,
+		SDKRESULT_UNEXPECTED_ERROR		= 0xff,
+	};*/
+
+
+	enum SDKSlotID
+	{
+		// 重要功能区slotID
+		SLOTID_IMPORTANTPANELSLOT = 0,
+		
+		// 底部功能区slotID
+		SLOTID_BOTTOMPANELSLOT = 1,
+
+		// 主菜单slotID
+		SLOTID_MAINMENUSLOT = 2,
+
+		// 聊天对话框主工具条slotID
+		SLOTID_IMCHATMAINTOOLBARSLOT = 3,
+
+		// 聊天对话框输入工具条slotID
+		SLOTID_IMCHATINPUTTOOLBARSLOT	= 4,
+	};
+
+	enum SDKMessageID
+	{
+		// IM用户登录成功
+		NOTIFY_USERLOGIN = 0,
+
+		// IM用户登出或者离线，被踢等
+		NOTIFY_OFFLINE	= 1,
+
+		//! 显示选项
+		NOTIFY_SHOW_OPTION = 2,
+
+		//! 即时消息
+		NOTIFY_CHATMESSAGE = 3,
+
+		//! 插件订阅消息
+		NOTIFY_AEPINFO = 4, 
+
+		//! 聊天Filter消息
+		//NOTIFY_CHATMESSAGE_FILTER = 5,
+	};
+
+	enum SDKItemNotifyID
+	{
+		//合并聊天窗口，用户切换，接发消息（提供给IPluginItem::OnNotify())
+		NOTIFY_CONTACT_TAB_CHANGING = 0,
+		NOTIFY_CONTACT_TAB_CHANGED = 1,
+	};
+
+	enum SDKItemStyle
+	{
+		ITEM_STYLE_CONTROL			= 0,//STYLE_CONTROL 一个空白窗口
+		ITEM_STYLE_BROWSE			= 1,//STYLE_BROWSE
+		ITEM_STYLE_BUTTON			= 2,//STYLE_BUTTON
+		ITEM_STYLE_MENU_BUTTON		= 3,//STYLE_MENU_BUTTON 
+	};
+
+	enum SDKSubscResult
+	{
+		RESULT_UNKNOWN			= 0, // 本地没记录
+		RESULT_SUBSCRIBED		= 1, // 已订阅
+		RESULT_UNSUBSCRIBED	= 2, // 没订阅
+		RESULT_EXPIRED		= 3, // 过期
+		RESULT_ERROR	= 4, // 错误
+	};
+
+/*	enum SDKCustomOrderOption
+	{
+		CUSTOM_ORDER_NORMAL = 0, // 表示第一次订购
+		CUSTOM_ORDER_REORDER = 1, // 表示续订
+	};*/
+
+	enum SDKShowWinPos
+	{
+		SHOW_ERROR = 0, // 有错误
+		SHOW_WIN_CENTER = 1, // 在屏幕居中显示
+		SHOW_WIN_LEFTTOP = 2, // 在屏幕左上角显示
+		SHOW_WIN_RIGHTTOP = 3, // 在屏幕右上角显示
+		SHOW_WIN_LEFTDOWN = 4, // 在屏幕左下角显示
+		SHOW_WIN_RIGHTDOWN = 5, // 在屏幕右下角显示
+		SHOW_WIN_MAXIMAL = 6 //屏幕最大化显示
+	};
+
+	enum SDKSecurityLevel
+	{
+		LEVEL_DISABLE	= 10 ,		// 被禁用的级别
+		LEVEL_ABOVE_DISABLE	= 13 ,		// 略高于禁用的级别目前保留
+		LEVEL_BELOW_NORMAL	= 18 ,		// 略低于普通的级别
+		LEVEL_NORMAL	= 20 ,		// 普通安全级别, 在初始化或者初始化失败后的级别		
+		LEVEL_ABOVE_NORMAL	= 23 ,		// 保留
+		LEVEL_BELOW_SAFE = 28, // 保留
+		LEVEL_SAFE		= 30 ,		// 安全级别,需要授权
+	};
+
+	enum SDKContactStatus
+	{
+		STATUS_OFFLINE = 0,
+		STATUS_ONLINE = 1,
+		STATUS_MOBILEONLINE = 2,
+	};
+	enum SDKItemType
+	{
+		ITEMTYPE_UNKNOWN = 0,
+		ITEMTYPE_PROGRAM ,
+		ITEMTYPE_CONFIG_URL ,
+		ITEMTYPE_CONFIG_EXE ,
+	};
+
+	enum SDKPluginType
+	{
+		PLUGINTYPE_UNKNOWN = 0,
+		PLUGINTYPE_PROGRAM ,
+		PLUGINTYPE_CONFIG ,
+	};
+
+	[
+		object,
+		uuid(76ACD737-E58B-4035-9D03-1D37255190DC),
+		dual,
+		nonextensible,
+		helpstring("ISDKPlugin Interface"),
+		pointer_default(unique)
+	]
+	interface ISDKPlugin : IDispatch{
+		[id(1), helpstring("method OnConnect")] HRESULT OnConnect([in] ISDKApplication* pApplication, [in] LONG lPluginCookie);
+		[id(2), helpstring("method OnDisconnect")] HRESULT OnDisconnect([in] ISDKApplication* pApplication, [in] LONG lPluginCookie);
+		[id(3), helpstring("method OnNotify")] HRESULT OnNotify([in] enum SDKMessageID MsgID, [in] IDispatch* pParam);
+		[id(4), helpstring("method OnUninstall")] HRESULT OnUninstall();
+	};
+
+	[
+		object,
+		uuid(205D5A1E-B245-43dc-A7C5-C0C6D663C164),
+		dual,
+		nonextensible,
+		helpstring("ISDKPlugin2 Interface"),
+		pointer_default(unique)
+	]
+	interface ISDKPlugin2 : IDispatch{
+		[id(1), helpstring("method OnConnect")] HRESULT OnConnect([in] IDispatch* pApplication2, [in] LONG lPluginCookie);
+		[id(2), helpstring("method OnDisconnect")] HRESULT OnDisconnect([in] IDispatch* pApplication2, [in] LONG lPluginCookie);
+		[id(3), helpstring("method OnNotify")] HRESULT OnNotify([in] enum SDKMessageID MsgID, [in] IDispatch* pParam);
+		[id(4), helpstring("method OnUninstall")] HRESULT OnUninstall();
+	};
+
+	[
+	object,
+	uuid(EB01E827-1D3F-41a0-8C3D-EBBCE9C492DE),
+	helpstring("ISDKDevPlugin 接口"),
+	pointer_default(unique)
+	]
+	interface ISDKDevPlugin: IUnknown{
+		[id(1), helpstring("method Require")] HRESULT Require();
+	};
+
+	[
+		object,
+		uuid(62BF5E6F-9FAA-4083-AC26-771C64C3E203),
+		dual,
+		nonextensible,
+		helpstring("ISDKPluginItem Interface"),
+		pointer_default(unique)
+	]
+	interface ISDKPluginItem : IDispatch{
+		[id(1), helpstring("method OnCreate")]
+		HRESULT OnCreate([in] IDispatch* pSlot, [in] LONG /*HWND */ hParentWnd , [in] LONG lItemCookie);
+
+		[id(2), helpstring("method OnDestroy")] 
+		HRESULT OnDestroy();
+
+		[id(3), helpstring("method OnNotify")]
+		HRESULT OnNotify([in] enum SDKItemNotifyID MsgID, [in] IDispatch* pParam);
+
+		[id(4), helpstring("method OnClick")]
+		HRESULT OnClick();
+
+		[id(5), helpstring("method OnSize")]
+		HRESULT OnSize([in]int cx, [in]int cy);
+
+		[id(6), helpstring("method OnMenuClick")]
+		HRESULT OnMenuClick([in] LONG lCmdID);
+	};
+
+	[
+		uuid(4D4569ED-5C5D-4D7D-ACB5-D5A797FC33FD),
+		helpstring("SDKApplication Class")
+	]
+	coclass SDKApplication
+	{
+		[default] interface ISDKApplication;
+		interface ISDKApplication2;
+		interface ISDKApplication3;
+	};
+	[
+		uuid(C9D49BC3-7EBA-4409-92A7-AB4C7A246CE1),
+		helpstring("SDKContactMgr Class")
+	]
+	coclass SDKContactMgr
+	{
+		[default] interface ISDKContactMgr;
+		interface ISDKContactMgr2;
+		interface ISDKContactMgr3;
+	};
+	[
+		uuid(0889ACCB-CF7B-4712-B975-F0E7B986013A),
+		helpstring("SDKMainFrame Class")
+	]
+	coclass SDKMainFrame
+	{
+		[default] interface ISDKMainFrame;
+		interface ISDKMainFrame2;
+	};
+	[
+		uuid(88E2BA4E-F633-47EF-82F8-59FAAB3CF67F),
+		helpstring("SDKLoginUser Class")
+	]
+	coclass SDKLoginUser
+	{
+		[default] interface ISDKLoginUser;
+		interface ISDKLoginUser2;
+		interface ISDKLoginUser3;
+		interface ISDKContact;
+	};
+	[
+		uuid(4583121D-DFE3-48A0-BF56-173DBB2BE626),
+		helpstring("SDKChatDlgMgr Class")
+	]
+	coclass SDKChatDlgMgr
+	{
+		[default] interface ISDKChatDlgMgr;
+		interface ISDKChatDlgMgr2;
+	};
+	[
+		uuid(7F14D8CB-5C27-470A-9C14-EBA624FFB023),
+		helpstring("SDKObjectCollection Class")
+	]
+	coclass SDKObjectCollection
+	{
+		[default] interface ISDKObjectCollection;
+	};
+	[
+		uuid(CE1058B0-8A54-4A70-9A9F-7437393A1AF2),
+		helpstring("SDKImportantPanelSlot Class")
+	]
+	coclass SDKImportantPanelSlot
+	{
+		[default] interface ISDKImportantPanelSlot;
+		interface ISDKImportantPanelSlot2;
+		interface ISDKSlot;
+	};
+	[
+		uuid(738A6E66-3842-4A4A-B297-4EE9110FAE86),
+		helpstring("SDKBottomPanelSlot Class")
+	]
+	coclass SDKBottomPanelSlot
+	{
+		[default] interface ISDKBottomPanelSlot;
+		interface ISDKBottomPanelSlot2;
+		interface ISDKSlot;
+	};
+	[
+		uuid(067627B0-6A5F-40D8-B3AE-3E85EF350D08),
+		helpstring("SDKChatDlg Class")
+	]
+	coclass SDKChatDlg
+	{
+		[default] interface ISDKChatDlg;
+		interface ISDKChatDlg2;
+		interface ISDKChatDlg3;
+	};
+
+	[
+		uuid(F558C788-2B2E-4028-A0F4-28359F9900EF),
+		helpstring("SDKContact Class")
+	]
+	coclass SDKContact
+	{
+		[default] interface ISDKContact;
+		interface ISDKContact2;
+		interface ISDKContact3;
+	};
+	[
+		uuid(A3AD6463-5B20-4CC7-A7B4-7AF1D6A4FAF3),
+		helpstring("SDKInputToolbarSlot Class")
+	]
+	coclass SDKIMInputToolbarSlot
+	{
+		[default] interface ISDKIMChatInputToolbarSlot;
+		interface ISDKIMChatInputToolbarSlot2;
+		interface ISDKSlot;
+	};
+	[
+		uuid(BDEA2387-2EB5-4FA1-A46A-C123BEA6CDA7),
+		helpstring("SDKMainToolbarSlot Class")
+	]
+	coclass SDKIMMainToolbarSlot
+	{
+		[default] interface ISDKIMChatMainToolbarSlot;
+		interface ISDKIMChatMainToolbarSlot2;
+		interface ISDKSlot;
+	};
+
+	// lmzhang 2008-10-13 from rvmin
+	[
+		uuid(2A34AE66-834D-41EF-94A9-30866C35736D),
+		helpstring("PluginMgr Class")
+	]
+	coclass PluginMgr
+	{
+		[default] interface IPluginMgr;
+	};
+	// end
+
+	[
+		uuid(BBEE963D-ED61-4df5-B632-A81F9F725824),
+		helpstring("PluginMgrV2 Class")
+	]
+	coclass PluginMgrV2
+	{
+		[default] interface IPluginMgrV2;
+		interface IPluginMgrV3;
+	};
+	[
+		uuid(631A3ED5-0CE4-40CF-9DAC-99161ACFAE4C),
+		helpstring("SlotItemInfor Class")
+	]
+	coclass SlotItemInfor
+	{
+		[default] interface ISlotItemInfor;
+	};
+
+	[
+		uuid(5549D001-5E34-4FB1-894C-BE6CDED22AEC),
+		helpstring("MainMenuSlot Class")
+	]
+	coclass SDKMainMenuSlot
+	{
+		[default] interface ISDKMainMenuSlot;
+		interface ISDKMainMenuSlot2;
+		interface ISDKSlot;
+	};
+	[
+		uuid(22FC1700-9A36-4C66-A2ED-7EB1847FAAB4),
+		helpstring("SDKNotifyUserLogin Class")
+	]
+	coclass SDKNotifyUserLogin
+	{
+		[default] interface ISDKNotifyUserLogin;
+	};
+	[
+		uuid(DF3F690A-37B4-40E8-8046-E028D975A813),
+		helpstring("SDKNotifyOffline Class")
+	]
+	coclass SDKNotifyOffline
+	{
+		[default] interface ISDKNotifyOffline;
+	};
+	[
+		uuid(7BCE6F5B-8F96-42C8-A94E-40E46214C56D),
+		helpstring("SubMenuItemInfo Class")
+	]
+	coclass SubMenuItemInfo
+	{
+		[default] interface ISubMenuItemInfo;
+	};
+	[
+		uuid(CB441CB8-744A-4E27-9E97-A7B669EAF0C8),
+		helpstring("SDKNotifyChatMessage Class")
+	]
+	coclass SDKNotifyChatMessage
+	{
+		[default] interface ISDKNotifyChatMessage;
+	};
+	[
+		uuid(3544C377-69A1-4A3C-807F-758B1D2031C0),
+		helpstring("SDKNotifyShowOption Class")
+	]
+	coclass SDKNotifyShowOption
+	{
+		[default] interface ISDKNotifyShowOption;
+	};
+	[
+		uuid(842527BA-DD66-4608-B3F3-D697D9B26C45),
+		helpstring("SDKNotifyContactTabChanging Class")
+	]
+	coclass SDKNotifyContactTabChanging
+	{
+		[default] interface ISDKNotifyContactTabChanging;
+	};
+	[
+		uuid(929A220A-3C0E-4DD0-9CE3-C4918CCBB194),
+		helpstring("SDKNotifyContactTabChanged Class")
+	]
+	coclass SDKNotifyContactTabChanged
+	{
+		[default] interface ISDKNotifyContactTabChanged;
+	};
+/*	[
+		uuid(E59965CC-7891-478F-A615-3F13DEDC9B7B),
+		helpstring("SDKNotifyCustomOrder Class")
+	]
+	coclass SDKNotifyCustomOrder
+	{
+		[default] interface ISDKNotifyCustomOrder;
+	};*/
+	[
+		uuid(AAA19146-4543-4A54-A88E-0826BDF8D8C8),
+		helpstring("WWPluginKey Class")
+	]
+	coclass WWPluginKey
+	{
+		[default] interface IWWPluginKey;
+	};
+	
+	[
+		uuid(B1108F93-B421-40A4-BD75-3A643070C734),
+		helpstring("WWPluginQueryRes Class")
+	]
+	coclass WWPluginQueryRes
+	{
+		[default] interface IWWPluginQueryRes;
+	};
+
+	[
+		uuid(E48153F3-B244-4A7F-8B3B-9B0F4A6FC062),
+		helpstring("SDKGroup Class")
+	]
+	coclass SDKGroup
+	{
+		[default] interface ISDKGroup;
+	};
+	[
+		uuid(AECD09A4-E3D7-473B-8058-70EC276F1B0D),
+		helpstring("WWPluginMonitor Class")
+	]
+	coclass WWPluginMonitor
+	{
+		[default] interface IWWPluginMonitor;
+	};
+	[
+		uuid(619A679E-E6CC-4597-A918-5C43E53CCDAB),
+		helpstring("WWPluginProxy Class")
+	]
+	coclass WWPluginProxy
+	{
+		[default] interface ISDKPlugin2;
+		interface IWWPluginProxy;
+	};
+	[
+		uuid(E3463972-A30E-4151-BADD-C20171D0537F),
+		helpstring("WWPluginItemFacade Class")
+	]
+	coclass WWPluginItemFacade
+	{
+		[default] interface ISDKPluginItem;
+		interface IWWItemFacade;
+	};
+	[
+		uuid(7E6D4094-12BD-4C48-939D-EDB5E6070008),
+		helpstring("WWPluginInfo Class")
+	]
+	coclass WWPluginInfo
+	{
+		[default] interface IWWPluginInfo;
+	};
+	[
+		uuid(A6CAF5FC-D9DF-412C-B0F3-5B5E4906BD37),
+		helpstring("WWWindowItemFacade Class")
+	]
+	coclass WWWindowItemFacade
+	{
+		[default] interface ISDKPluginItem;
+		interface IWWItemFacade;
+	};
+	[
+		uuid(61A8D917-B388-43CA-8942-1DE35B27B716),
+		helpstring("WWMsgFilter Class")
+	]
+	coclass WWMsgFilter
+	{
+		[default] interface IMessageFilter;
+	};
+};

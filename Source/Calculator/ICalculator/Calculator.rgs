@@ -1,0 +1,25 @@
+HKCR
+{
+    LWCalculator.Calculator.1 = s 'Calculator Class'
+    {
+        CLSID = s '{AA4D79FB-E795-45C9-AE30-100D1F27A780}'
+    }
+    LWCalculator.Calculator = s 'Calculator Class'
+    {
+        CLSID = s '{AA4D79FB-E795-45C9-AE30-100D1F27A780}'
+        CurVer = s 'LWCalculator.Calculator.1'
+    }
+    NoRemove CLSID
+    {
+        ForceRemove {AA4D79FB-E795-45C9-AE30-100D1F27A780} = s 'Calculator Class'
+        {
+            ProgID = s 'LWCalculator.Calculator.1'
+            VersionIndependentProgID = s 'LWCalculator.Calculator'
+            InprocServer32 = s '%MODULE%'
+            {
+                val ThreadingModel = s 'Apartment'
+            }
+            'TypeLib' = s '{BA300315-230E-4BF9-A4B5-CFDCF772464B}'
+        }
+    }
+}

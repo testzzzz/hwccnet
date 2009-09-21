@@ -1,0 +1,39 @@
+// Update.idl : Update 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(Update.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+    uuid(9BA693AC-B51A-46BE-8673-900E2494048E),
+    dual,
+    nonextensible,
+    helpstring("IUpdateVersion 接口"),
+    pointer_default(unique)
+]
+interface IUpdateVersion : IDispatch{
+    [id(1), helpstring("方法CheckUpdate")] HRESULT CheckUpdate(void);
+    [id(2), helpstring("方法downloadUpdateFile")] HRESULT DownloadUpdateFile(void);
+    [id(3), helpstring("方法ConnectUpdateServer")] HRESULT ConnectUpdateServer([in] BSTR UpdateServerUrl);
+};
+[
+    uuid(F15F9940-11BF-45B9-A324-A8D1E7D14A69),
+    version(1.0),
+    helpstring("Update 1.0 类型库")
+]
+library UpdateLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(043A0012-F9FB-4DD8-AFF9-8C0911138D97),
+        helpstring("UpdateVersion Class")
+    ]
+    coclass UpdateVersion
+    {
+        [default] interface IUpdateVersion;
+    };
+};

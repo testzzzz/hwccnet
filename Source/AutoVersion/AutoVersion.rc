@@ -1,0 +1,15 @@
+#include <windows.h>
+
+//
+// We can change the macros in ntverp.h to change the file's type and version
+//
+#include "ntverp.h"
+
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "Produced by song"
+#define VER_INTERNALNAME_STR        "AutoVersion.exe"
+#define VER_ORIGINALFILENAME_STR    "AutoVersion.exe"
+
+#include "common.ver"

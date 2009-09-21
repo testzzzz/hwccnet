@@ -1,0 +1,13 @@
+Notice: Output directory `output' does not exist. I have created it for you.
+D:/TestCCNet/WinService/WinService/WinService.cpp:5: Warning: Found unknown command `\System32'
+D:/TestCCNet/WinService/WinService/WinService.cpp:5: Warning: Found unknown command `\System32'
+D:/TestCCNet/WinService/WinService/WinService.cpp:5: Warning: Found unknown command `\System32'
+D:/TestCCNet/WinService/WinService/WinService.cpp:45: Warning: argument '__in' of command @param is not found in the argument list of YXHandler(__in DWORD fdwControl)
+D:/TestCCNet/WinService/WinService/WinService.cpp:45: Warning: The following parameters of YXHandler(__in DWORD fdwControl) are not documented:
+  parameter 'fdwControl'
+D:/TestCCNet/WinService/WinService/WinService.cpp:28: Warning: argument '__in' of command @param is not found in the argument list of YXServiceMain(__in DWORD dwArgc, __in LPTSTR *lpszArgv)
+D:/TestCCNet/WinService/WinService/WinService.cpp:28: Warning: argument '__in' of command @param is not found in the argument list of YXServiceMain(__in DWORD dwArgc, __in LPTSTR *lpszArgv)
+D:/TestCCNet/WinService/WinService/WinService.cpp:28: Warning: The following parameters of YXServiceMain(__in DWORD dwArgc, __in LPTSTR *lpszArgv) are not documented:
+  parameter 'dwArgc'
+  parameter 'lpszArgv'
+D:/TestCCNet/WinService/WinService/WinService.cpp:5: Warning: Found unknown command `\System32'

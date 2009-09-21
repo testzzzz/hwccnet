@@ -1,0 +1,51 @@
+<cruisecontrol project="WinService">
+  <request source="Administrator" buildCondition="ForceBuild">Administrator triggered a build (ForceBuild)</request>
+  <modifications />
+  <integrationProperties>
+    <CCNetArtifactDirectory>D:\TestCCNet\WinService\Log</CCNetArtifactDirectory>
+    <CCNetBuildCondition>ForceBuild</CCNetBuildCondition>
+    <CCNetBuildDate>2009-09-11</CCNetBuildDate>
+    <CCNetBuildTime>15:19:15</CCNetBuildTime>
+    <CCNetFailureUsers />
+    <CCNetIntegrationStatus>Exception</CCNetIntegrationStatus>
+    <CCNetLabel>2009.09.11.011</CCNetLabel>
+    <CCNetLastIntegrationStatus>Success</CCNetLastIntegrationStatus>
+    <CCNetListenerFile>D:\TestCCNet\WinService\Log\WinService_ListenFile.xml</CCNetListenerFile>
+    <CCNetModifyingUsers />
+    <CCNetNumericLabel>11</CCNetNumericLabel>
+    <CCNetProject>WinService</CCNetProject>
+    <CCNetProjectUrl>http://127.0.0.1/ccnet</CCNetProjectUrl>
+    <CCNetRequestSource>Administrator</CCNetRequestSource>
+    <CCNetWorkingDirectory>D:\TestCCNet\WinService</CCNetWorkingDirectory>
+    <LastChangeNumber>0</LastChangeNumber>
+    <LastIntegrationStatus>Success</LastIntegrationStatus>
+    <LastSuccessfulIntegrationLabel>2009.09.11.010</LastSuccessfulIntegrationLabel>
+    <LastModificationDate>2009-9-10 15:19:17</LastModificationDate>
+  </integrationProperties>
+  <build date="2009-09-11 15:19:15" buildtime="00:00:01" buildcondition="ForceBuild" />
+  <exception><![CDATA[ThoughtWorks.CruiseControl.Core.Tasks.BuilderException: Unable to execute: AutoVersion.exe ntverp.h
+System.IO.IOException: Unable to execute file [D:\TestCCNet\WinService\WinService\AutoVersion.exe].  The file may not exist or may not be executable. ---> System.ComponentModel.Win32Exception: 系统找不到指定的文件。
+   在 System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 ThoughtWorks.CruiseControl.Core.Util.ProcessExecutor.RunnableProcess.StartProcess()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ThoughtWorks.CruiseControl.Core.Util.ProcessExecutor.RunnableProcess.StartProcess()
+   在 ThoughtWorks.CruiseControl.Core.Util.ProcessExecutor.RunnableProcess.Run()
+   在 ThoughtWorks.CruiseControl.Core.Util.ProcessExecutor.Execute(ProcessInfo processInfo)
+   在 ThoughtWorks.CruiseControl.Core.Tasks.BaseExecutableTask.TryToRun(ProcessInfo info) ---> System.IO.IOException: Unable to execute file [D:\TestCCNet\WinService\WinService\AutoVersion.exe].  The file may not exist or may not be executable. ---> System.ComponentModel.Win32Exception: 系统找不到指定的文件。
+   在 System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 ThoughtWorks.CruiseControl.Core.Util.ProcessExecutor.RunnableProcess.StartProcess()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ThoughtWorks.CruiseControl.Core.Util.ProcessExecutor.RunnableProcess.StartProcess()
+   在 ThoughtWorks.CruiseControl.Core.Util.ProcessExecutor.RunnableProcess.Run()
+   在 ThoughtWorks.CruiseControl.Core.Util.ProcessExecutor.Execute(ProcessInfo processInfo)
+   在 ThoughtWorks.CruiseControl.Core.Tasks.BaseExecutableTask.TryToRun(ProcessInfo info)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ThoughtWorks.CruiseControl.Core.Tasks.BaseExecutableTask.TryToRun(ProcessInfo info)
+   在 ThoughtWorks.CruiseControl.Core.Tasks.ExecutableTask.Run(IIntegrationResult result)
+   在 ThoughtWorks.CruiseControl.Core.Project.RunTasks(IIntegrationResult result, IList tasksToRun)
+   在 ThoughtWorks.CruiseControl.Core.Project.Run(IIntegrationResult result)
+   在 ThoughtWorks.CruiseControl.Core.IntegrationRunner.Build(IIntegrationResult result)
+   在 ThoughtWorks.CruiseControl.Core.IntegrationRunner.Integrate(IntegrationRequest request) BaseDirectory: D:\TestCCNet\WinService\WinService\, Executable: AutoVersion.exe]]></exception>
+</cruisecontrol>

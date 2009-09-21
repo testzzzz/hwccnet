@@ -1,0 +1,36 @@
+// LWCalculator.idl : LWCalculator 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(LWCalculator.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+    uuid(44248C0A-9517-4EC4-8A86-EF057DC03436),
+    helpstring("ICalculator 接口"),
+    pointer_default(unique)
+]
+interface ICalculator : IUnknown{
+    [helpstring("方法PutKey")] HRESULT PutKey([in] LONG key);
+    [helpstring("方法QueryResult")] HRESULT QueryResult([out,retval] LONG* RetVal);
+};
+[
+    uuid(BA300315-230E-4BF9-A4B5-CFDCF772464B),
+    version(1.0),
+    helpstring("LWCalculator 1.0 类型库")
+]
+library LWCalculatorLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(AA4D79FB-E795-45C9-AE30-100D1F27A780),
+        helpstring("Calculator Class")
+    ]
+    coclass Calculator
+    {
+        [default] interface ICalculator;
+    };
+};

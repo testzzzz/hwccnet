@@ -1,0 +1,31 @@
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/testWinHTTPLW.cpp:17: Warning: argument '__in' of command @param is not found in the argument list of ShowError(HRESULT ErrorCode)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/testWinHTTPLW.cpp:17: Warning: The following parameters of ShowError(HRESULT ErrorCode) are not documented:
+  parameter 'ErrorCode'
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.cpp:210: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::Connect(__in LPCWSTR pswzServerName, __in INTERNET_PORT nServerPort=INTERNET_DEFAULT_PORT)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.cpp:210: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::Connect(__in LPCWSTR pswzServerName, __in INTERNET_PORT nServerPort=INTERNET_DEFAULT_PORT)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.cpp:210: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::Connect(__in LPCWSTR pswzServerName, __in INTERNET_PORT nServerPort=INTERNET_DEFAULT_PORT)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.cpp:210: Warning: The following parameters of WinHTTPLW::Connect(__in LPCWSTR pswzServerName, __in INTERNET_PORT nServerPort=INTERNET_DEFAULT_PORT) are not documented:
+  parameter 'pswzServerName'
+  parameter 'nServerPort'
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:116: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::downloadFile(__in LPCSTR downloadDirectory, __out DWORD *fileSize)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:116: Warning: argument '__out' of command @param is not found in the argument list of WinHTTPLW::downloadFile(__in LPCSTR downloadDirectory, __out DWORD *fileSize)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:116: Warning: The following parameters of WinHTTPLW::downloadFile(__in LPCSTR downloadDirectory, __out DWORD *fileSize) are not documented:
+  parameter 'downloadDirectory'
+  parameter 'fileSize'
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:37: Warning: argument 'void' of command @param is not found in the argument list of WinHTTPLW::Initialize()
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:85: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::Request(__in LPCWSTR pswzVerb=NULL, __in LPCWSTR pswzObjectName=NULL, __in_opt LPCWSTR pwszHeaders=WINHTTP_NO_ADDITIONAL_HEADERS, __in DWORD dwHeadersLength=-1L, __in_opt LPVOID lpOptional=WINHTTP_NO_REQUEST_DATA, __in DWORD dwOptionalLength=0, __in DWORD dwTotalLength=0)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:85: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::Request(__in LPCWSTR pswzVerb=NULL, __in LPCWSTR pswzObjectName=NULL, __in_opt LPCWSTR pwszHeaders=WINHTTP_NO_ADDITIONAL_HEADERS, __in DWORD dwHeadersLength=-1L, __in_opt LPVOID lpOptional=WINHTTP_NO_REQUEST_DATA, __in DWORD dwOptionalLength=0, __in DWORD dwTotalLength=0)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:85: Warning: argument '__in_opt' of command @param is not found in the argument list of WinHTTPLW::Request(__in LPCWSTR pswzVerb=NULL, __in LPCWSTR pswzObjectName=NULL, __in_opt LPCWSTR pwszHeaders=WINHTTP_NO_ADDITIONAL_HEADERS, __in DWORD dwHeadersLength=-1L, __in_opt LPVOID lpOptional=WINHTTP_NO_REQUEST_DATA, __in DWORD dwOptionalLength=0, __in DWORD dwTotalLength=0)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:85: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::Request(__in LPCWSTR pswzVerb=NULL, __in LPCWSTR pswzObjectName=NULL, __in_opt LPCWSTR pwszHeaders=WINHTTP_NO_ADDITIONAL_HEADERS, __in DWORD dwHeadersLength=-1L, __in_opt LPVOID lpOptional=WINHTTP_NO_REQUEST_DATA, __in DWORD dwOptionalLength=0, __in DWORD dwTotalLength=0)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:85: Warning: argument '__in_opt' of command @param is not found in the argument list of WinHTTPLW::Request(__in LPCWSTR pswzVerb=NULL, __in LPCWSTR pswzObjectName=NULL, __in_opt LPCWSTR pwszHeaders=WINHTTP_NO_ADDITIONAL_HEADERS, __in DWORD dwHeadersLength=-1L, __in_opt LPVOID lpOptional=WINHTTP_NO_REQUEST_DATA, __in DWORD dwOptionalLength=0, __in DWORD dwTotalLength=0)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:85: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::Request(__in LPCWSTR pswzVerb=NULL, __in LPCWSTR pswzObjectName=NULL, __in_opt LPCWSTR pwszHeaders=WINHTTP_NO_ADDITIONAL_HEADERS, __in DWORD dwHeadersLength=-1L, __in_opt LPVOID lpOptional=WINHTTP_NO_REQUEST_DATA, __in DWORD dwOptionalLength=0, __in DWORD dwTotalLength=0)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:85: Warning: argument '__in' of command @param is not found in the argument list of WinHTTPLW::Request(__in LPCWSTR pswzVerb=NULL, __in LPCWSTR pswzObjectName=NULL, __in_opt LPCWSTR pwszHeaders=WINHTTP_NO_ADDITIONAL_HEADERS, __in DWORD dwHeadersLength=-1L, __in_opt LPVOID lpOptional=WINHTTP_NO_REQUEST_DATA, __in DWORD dwOptionalLength=0, __in DWORD dwTotalLength=0)
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:85: Warning: The following parameters of WinHTTPLW::Request(__in LPCWSTR pswzVerb=NULL, __in LPCWSTR pswzObjectName=NULL, __in_opt LPCWSTR pwszHeaders=WINHTTP_NO_ADDITIONAL_HEADERS, __in DWORD dwHeadersLength=-1L, __in_opt LPVOID lpOptional=WINHTTP_NO_REQUEST_DATA, __in DWORD dwOptionalLength=0, __in DWORD dwTotalLength=0) are not documented:
+  parameter 'pswzVerb'
+  parameter 'pswzObjectName'
+  parameter 'pwszHeaders'
+  parameter 'dwHeadersLength'
+  parameter 'lpOptional'
+  parameter 'dwOptionalLength'
+  parameter 'dwTotalLength'
+D:/VC2008Projects/Projects/WinHTTPLW/WinHTTPLW/WinHTTPLW.h:53: Warning: argument 'void' of command @param is not found in the argument list of WinHTTPLW::Uninitialize()

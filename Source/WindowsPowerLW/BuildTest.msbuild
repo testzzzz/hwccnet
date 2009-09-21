@@ -1,0 +1,6 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+  <Target Name="Build">
+    <MSBuild Projects="WindowsPowerLW.sln" Targets="Clean;Rebuild"/>
+    <Exec Command="rebuild.bat"/>
+  </Target>
+</Project>

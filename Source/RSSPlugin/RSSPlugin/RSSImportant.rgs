@@ -1,0 +1,26 @@
+HKCR
+{
+    RSSPlugin.RSSImportant.1 = s 'RSSImportant Class'
+    {
+        CLSID = s '{AEB4E820-D9CF-49D0-AE52-188CC8AA19DE}'
+    }
+    RSSPlugin.RSSImportant = s 'RSSImportant Class'
+    {
+        CLSID = s '{AEB4E820-D9CF-49D0-AE52-188CC8AA19DE}'
+        CurVer = s 'RSSPlugin.RSSImportant.1'
+    }
+    NoRemove CLSID
+    {
+        ForceRemove {AEB4E820-D9CF-49D0-AE52-188CC8AA19DE} = s 'RSSImportant Class'
+        {
+            ProgID = s 'RSSPlugin.RSSImportant.1'
+            VersionIndependentProgID = s 'RSSPlugin.RSSImportant'
+            ForceRemove 'Programmable'
+            InprocServer32 = s '%MODULE%'
+            {
+                val ThreadingModel = s 'Apartment'
+            }
+            'TypeLib' = s '{EFADFE4B-15AE-480A-90A7-1E7A8ECB46E4}'
+        }
+    }
+}
