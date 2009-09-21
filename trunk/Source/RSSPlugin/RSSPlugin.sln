@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RSSPlugin", "RSSPlugin\RSSPlugin.vcproj", "{C634CD6F-33FB-4BA5-BE65-BA082D160717}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RSSPluginPS", "RSSPlugin\RSSPluginPS.vcproj", "{D3B5821E-33A8-4825-BF61-8C3B68DF4B25}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C634CD6F-33FB-4BA5-BE65-BA082D160717} = {C634CD6F-33FB-4BA5-BE65-BA082D160717}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RSSParser", "RSSParser\RSSParser.vcproj", "{620F5E67-24E8-485F-896E-CC5D4DF4DC22}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcproj", "{44B386EE-0473-4FAE-B631-0DFAE394E9CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C634CD6F-33FB-4BA5-BE65-BA082D160717}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C634CD6F-33FB-4BA5-BE65-BA082D160717}.Debug|Win32.Build.0 = Debug|Win32
+		{C634CD6F-33FB-4BA5-BE65-BA082D160717}.Release|Win32.ActiveCfg = Release|Win32
+		{C634CD6F-33FB-4BA5-BE65-BA082D160717}.Release|Win32.Build.0 = Release|Win32
+		{D3B5821E-33A8-4825-BF61-8C3B68DF4B25}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D3B5821E-33A8-4825-BF61-8C3B68DF4B25}.Release|Win32.ActiveCfg = Release|Win32
+		{620F5E67-24E8-485F-896E-CC5D4DF4DC22}.Debug|Win32.ActiveCfg = Debug|Win32
+		{620F5E67-24E8-485F-896E-CC5D4DF4DC22}.Debug|Win32.Build.0 = Debug|Win32
+		{620F5E67-24E8-485F-896E-CC5D4DF4DC22}.Release|Win32.ActiveCfg = Release|Win32
+		{620F5E67-24E8-485F-896E-CC5D4DF4DC22}.Release|Win32.Build.0 = Release|Win32
+		{44B386EE-0473-4FAE-B631-0DFAE394E9CA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{44B386EE-0473-4FAE-B631-0DFAE394E9CA}.Debug|Win32.Build.0 = Debug|Win32
+		{44B386EE-0473-4FAE-B631-0DFAE394E9CA}.Release|Win32.ActiveCfg = Release|Win32
+		{44B386EE-0473-4FAE-B631-0DFAE394E9CA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

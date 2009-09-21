@@ -1,0 +1,176 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""RSSPlugin.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include <windows.h>
+
+//
+// We can change the macros in ntverp.h to change the file's type and version
+//
+#include "ntverp.h"
+
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "Produced by NesTa.xP"
+#define VER_INTERNALNAME_STR        "RSSPlugin.dll"
+#define VER_ORIGINALFILENAME_STR    "RSSPlugin.dll"
+
+#include "common.ver"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_RSSPLUGIN           REGISTRY                "RSSPlugin.rgs"
+IDR_RSSPLUGIN2          REGISTRY                "RSSPlugin2.rgs"
+IDR_RSSIMPORTANT        REGISTRY                "RSSImportant.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RSS_DLG DIALOGEX 0, 0, 316, 206
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RSS追踪器"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "RSS追踪结果",IDC_STATIC,7,7,302,111
+    CONTROL         "",IDC_RSS_SHOW,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,14,28,287,82
+    GROUPBOX        "操作与设置",IDC_STATIC,7,122,302,71
+    LTEXT           "选择已订阅的RSS源",IDC_STATIC,15,136,70,8
+    LTEXT           "设定显示的数量",IDC_STATIC,28,153,57,8
+    EDITTEXT        IDC_RSS_NUM,97,152,117,12,ES_AUTOHSCROLL
+    LTEXT           "添加新的RSS订阅",IDC_STATIC,23,170,63,8
+    EDITTEXT        IDC_RSS_ADD,97,169,117,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "添加",IDC_BTN_ADD,223,169,28,13
+    COMBOBOX        IDC_RSS_LIST,97,134,117,65,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "频道名称：",IDC_STATIC,14,18,41,9
+    LTEXT           "最后更新日期：",IDC_STATIC,172,18,58,9
+    LTEXT           "",IDC_RSS_NAME,55,18,105,9
+    LTEXT           "",IDC_RSS_DATE,229,18,71,9
+    PUSHBUTTON      "更新",IDC_BTN_UPDATE,223,152,28,13
+    LTEXT           "",IDC_RSS_NOTIFY,224,136,78,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_RSS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_RSS_DLG DLGINIT
+BEGIN
+    IDC_RSS_LIST, 0x403, 2, 0
+0x0031, 
+    IDC_RSS_LIST, 0x403, 2, 0
+0x0032, 
+    IDC_RSS_LIST, 0x403, 2, 0
+0x0033, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "RSSPlugin"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "RSSPlugin.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

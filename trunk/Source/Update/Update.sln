@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Update", "Update\Update.vcproj", "{6460D288-9843-4ABA-BF14-80FB4A45C132}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UpdatePS", "Update\UpdatePS.vcproj", "{ECE262CE-2C50-4B9F-B62C-59A2F9717B5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6460D288-9843-4ABA-BF14-80FB4A45C132} = {6460D288-9843-4ABA-BF14-80FB4A45C132}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testUpdate", "testUpdate\testUpdate.vcproj", "{5CFE15C6-C706-4B9D-8F6A-47E15FD021FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6460D288-9843-4ABA-BF14-80FB4A45C132}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6460D288-9843-4ABA-BF14-80FB4A45C132}.Debug|Win32.Build.0 = Debug|Win32
+		{6460D288-9843-4ABA-BF14-80FB4A45C132}.Release|Win32.ActiveCfg = Release|Win32
+		{6460D288-9843-4ABA-BF14-80FB4A45C132}.Release|Win32.Build.0 = Release|Win32
+		{ECE262CE-2C50-4B9F-B62C-59A2F9717B5C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ECE262CE-2C50-4B9F-B62C-59A2F9717B5C}.Release|Win32.ActiveCfg = Release|Win32
+		{5CFE15C6-C706-4B9D-8F6A-47E15FD021FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5CFE15C6-C706-4B9D-8F6A-47E15FD021FA}.Debug|Win32.Build.0 = Debug|Win32
+		{5CFE15C6-C706-4B9D-8F6A-47E15FD021FA}.Release|Win32.ActiveCfg = Release|Win32
+		{5CFE15C6-C706-4B9D-8F6A-47E15FD021FA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

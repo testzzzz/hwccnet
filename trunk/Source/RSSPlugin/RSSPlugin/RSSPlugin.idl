@@ -1,0 +1,55 @@
+// RSSPlugin.idl : RSSPlugin 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(RSSPlugin.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "..\typelib\wwsdkcom.idl";
+
+[
+    object,
+    uuid(AC9E3B7E-AE04-4E51-8C47-34CA5CDA493C),
+    dual,
+    nonextensible,
+    helpstring("IRSSPlugin2 接口"),
+    pointer_default(unique)
+]
+interface IRSSPlugin2 : IDispatch{
+};
+[
+    object,
+    uuid(27E2BF87-0368-46C0-98C2-BDCB04B0DF2E),
+    dual,
+    nonextensible,
+    helpstring("IRSSImportant 接口"),
+    pointer_default(unique)
+]
+interface IRSSImportant : IDispatch{
+};
+[
+    uuid(EFADFE4B-15AE-480A-90A7-1E7A8ECB46E4),
+    version(1.0),
+    helpstring("RSSPlugin 1.0 类型库")
+]
+library RSSPluginLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(8E4D9061-3E51-48B1-BC86-88B62EB0E812),
+        helpstring("RSSPlugin2 Class")
+    ]
+    coclass RSSPlugin2
+    {
+        [default] interface ISDKPlugin2;
+    };
+    [
+        uuid(AEB4E820-D9CF-49D0-AE52-188CC8AA19DE),
+        helpstring("RSSImportant Class")
+    ]
+    coclass RSSImportant
+    {
+        [default] interface ISDKPluginItem;
+    };
+};
