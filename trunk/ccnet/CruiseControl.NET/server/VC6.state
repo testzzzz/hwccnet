@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IntegrationResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectName>VC6</ProjectName>
+  <ProjectUrl>http://NAVA7/ccnet</ProjectUrl>
+  <BuildCondition>ForceBuild</BuildCondition>
+  <Label>13</Label>
+  <WorkingDirectory>D:\personal\buildplatform\Prototype\VC6</WorkingDirectory>
+  <ArtifactDirectory>D:\personal\buildplatform\Prototype</ArtifactDirectory>
+  <Status>Success</Status>
+  <StartTime>2009-07-09T15:33:15.2106383+08:00</StartTime>
+  <EndTime>2009-07-09T15:33:17.7346383+08:00</EndTime>
+  <LastIntegrationStatus>Exception</LastIntegrationStatus>
+  <LastSuccessfulIntegrationLabel>13</LastSuccessfulIntegrationLabel>
+  <FailureUsers />
+</IntegrationResult>
