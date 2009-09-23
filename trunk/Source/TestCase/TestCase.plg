@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: TestCase - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/TestCase.res" /d "_DEBUG" "D:\Prototype\TestCase\TestCase.rc"" 
+Creating temporary file "C:\WINDOWS\TEMP\RSP588.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/TestCase.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Prototype\TestCase\Calculation.cpp"
+"D:\Prototype\TestCase\TestCalculation.cpp"
+"D:\Prototype\TestCase\TestCase.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP588.tmp" 
+Creating temporary file "C:\WINDOWS\TEMP\RSP589.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/TestCase.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Prototype\TestCase\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP589.tmp" 
+Creating temporary file "C:\WINDOWS\TEMP\RSP58A.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib cppunitd.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/TestCase.pdb" /debug /machine:I386 /out:"Debug/TestCase.exe" /pdbtype:sept /libpath:"lib" 
+.\Debug\Calculation.obj
+.\Debug\StdAfx.obj
+.\Debug\TestCalculation.obj
+.\Debug\TestCase.obj
+.\Debug\TestCase.res
+]
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSP58A.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Calculation.cpp
+TestCalculation.cpp
+TestCase.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+TestCase.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
