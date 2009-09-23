@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{F71E0F53-3368-4C68-8BA8-C61E2F583AF1} = s 'DcomSvr'
+		'DcomSvr.EXE'
+		{
+			val AppID = s {F71E0F53-3368-4C68-8BA8-C61E2F583AF1}
+		}
+	}
+}
