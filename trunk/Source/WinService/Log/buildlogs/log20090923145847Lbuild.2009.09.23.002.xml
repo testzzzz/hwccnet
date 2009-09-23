@@ -1,0 +1,218 @@
+<cruisecontrol project="WinService">
+  <request source="Administrator" buildCondition="ForceBuild">Administrator triggered a build (ForceBuild)</request>
+  <modifications>
+    <modification type="Deleted">
+      <filename>Log</filename>
+      <project>/trunk/Source/WinService</project>
+      <date>2009-09-23 14:58:38</date>
+      <user>youxiaoitaly@hotmail.com</user>
+      <comment />
+      <changeNumber>27</changeNumber>
+    </modification>
+  </modifications>
+  <integrationProperties>
+    <CCNetArtifactDirectory>d:\Prototype\WinService\Log</CCNetArtifactDirectory>
+    <CCNetBuildCondition>ForceBuild</CCNetBuildCondition>
+    <CCNetBuildDate>2009-09-23</CCNetBuildDate>
+    <CCNetBuildTime>14:58:47</CCNetBuildTime>
+    <CCNetFailureUsers />
+    <CCNetIntegrationStatus>Success</CCNetIntegrationStatus>
+    <CCNetLabel>2009.09.23.002</CCNetLabel>
+    <CCNetLastIntegrationStatus>Exception</CCNetLastIntegrationStatus>
+    <CCNetListenerFile>d:\Prototype\WinService\Log\WinService_ListenFile.xml</CCNetListenerFile>
+    <CCNetModifyingUsers>
+      <user>youxiaoitaly@hotmail.com</user>
+    </CCNetModifyingUsers>
+    <CCNetNumericLabel>2</CCNetNumericLabel>
+    <CCNetProject>WinService</CCNetProject>
+    <CCNetProjectUrl>http://127.0.0.1/ccnet</CCNetProjectUrl>
+    <CCNetRequestSource>Administrator</CCNetRequestSource>
+    <CCNetWorkingDirectory>d:\Prototype\WinService</CCNetWorkingDirectory>
+    <LastChangeNumber>27</LastChangeNumber>
+    <LastIntegrationStatus>Exception</LastIntegrationStatus>
+    <LastSuccessfulIntegrationLabel>2009.09.23.002</LastSuccessfulIntegrationLabel>
+    <LastModificationDate>2009-9-23 14:58:38</LastModificationDate>
+  </integrationProperties>
+  <build date="2009-09-23 14:58:47" buildtime="00:00:28" buildcondition="ForceBuild">
+
+<buildresults>
+  <message>Microsoft (R) 生成引擎版本 3.5.30729.1</message>
+  <message>[Microsoft .NET Framework 版本 2.0.50727.3053]</message>
+  <message>版权所有(C) Microsoft Corporation 2007。保留所有权利。</message>
+  <message>生成启动时间 2009-9-23 14:58:57。</message>
+  <message>节点 0 上的项目“d:\Prototype\WinService\BuildTest.msbuild”(默认目标)。</message>
+  <message>项目“d:\Prototype\WinService\BuildTest.msbuild”(1)正在节点 0 上生成“d:\Prototype\WinService\WinService.sln”(2)(Clean;Rebuild 目标)。</message>
+  <message>  正在生成解决方案配置“Debug|Win32”。</message>
+  <message>Clean:</message>
+  <message>  正在删除文件“WinService.sln.cache”。</message>
+  <message>已完成生成项目“d:\Prototype\WinService\WinService.sln”(Clean;Rebuild 目标)。</message>
+  <message>Build:</message>
+  <message>  清空以前输出</message>
+  <message>  生成文档</message>
+  <message>  Searching for include files...</message>
+  <message>  Searching for example files...</message>
+  <message>  Searching for images...</message>
+  <message>  Searching for dot files...</message>
+  <message>  Searching for files to exclude</message>
+  <message>  Searching for files to process...</message>
+  <message>  Searching for files in directory d:/Prototype/WinService/WinService</message>
+  <message>  Reading and parsing tag files</message>
+  <message>  Preprocessing d:/Prototype/WinService/WinService/ntverp.h...</message>
+  <message>  Parsing file d:/Prototype/WinService/WinService/ntverp.h...</message>
+  <message>  Preprocessing d:/Prototype/WinService/WinService/resource.h...</message>
+  <message>  Parsing file d:/Prototype/WinService/WinService/resource.h...</message>
+  <message>  Preprocessing d:/Prototype/WinService/WinService/stdafx.cpp...</message>
+  <message>  Parsing file d:/Prototype/WinService/WinService/stdafx.cpp...</message>
+  <message>  Preprocessing d:/Prototype/WinService/WinService/stdafx.h...</message>
+  <message>  Parsing file d:/Prototype/WinService/WinService/stdafx.h...</message>
+  <message>  Preprocessing d:/Prototype/WinService/WinService/targetver.h...</message>
+  <message>  Parsing file d:/Prototype/WinService/WinService/targetver.h...</message>
+  <message>  Preprocessing d:/Prototype/WinService/WinService/WinService.cpp...</message>
+  <message>  Parsing file d:/Prototype/WinService/WinService/WinService.cpp...</message>
+  <message>  Building group list...</message>
+  <message>  Building directory list...</message>
+  <message>  Building namespace list...</message>
+  <message>  Building file list...</message>
+  <message>  Building class list...</message>
+  <message>  Associating documentation with classes...</message>
+  <message>  Computing nesting relations for classes...</message>
+  <message>  Building example list...</message>
+  <message>  Searching for enumerations...</message>
+  <message>  Searching for documented typedefs...</message>
+  <message>  Searching for members imported via using declarations...</message>
+  <message>  Searching for included using directives...</message>
+  <message>  Searching for documented variables...</message>
+  <message>  Building member list...</message>
+  <message>  Searching for friends...</message>
+  <message>  Searching for documented defines...</message>
+  <message>  Computing class inheritance relations...</message>
+  <message>  Computing class usage relations...</message>
+  <message>  Flushing cached template relations that have become invalid...</message>
+  <message>  Creating members for template instances...</message>
+  <message>  Computing class relations...</message>
+  <message>  Add enum values to enums...</message>
+  <message>  Searching for member function documentation...</message>
+  <message>  Building page list...</message>
+  <message>  Search for main page...</message>
+  <message>  Computing page relations...</message>
+  <message>  Determining the scope of groups...</message>
+  <message>  Sorting lists...</message>
+  <message>  Freeing entry tree</message>
+  <message>  Determining which enums are documented</message>
+  <message>  Computing member relations...</message>
+  <message>  Building full member lists recursively...</message>
+  <message>  Adding members to member groups.</message>
+  <message>  Computing member references...</message>
+  <message>  Inheriting documentation...</message>
+  <message>  Generating disk names...</message>
+  <message>  Adding source references...</message>
+  <message>  Adding todo/test/bug list items...</message>
+  <message>  Counting data structures...</message>
+  <message>  Resolving user defined references...</message>
+  <message>  Finding anchors and sections in the documentation...</message>
+  <message>  Combining using relations...</message>
+  <message>  Adding members to index pages...</message>
+  <message>  Generating style sheet...</message>
+  <message>  Generating index page...</message>
+  <message>  Generating page index...</message>
+  <message>  Generating example documentation...</message>
+  <message>  Generating file sources...</message>
+  <message>  Generating code for file ntverp.h...</message>
+  <message>  Generating code for file resource.h...</message>
+  <message>  Generating code for file stdafx.cpp...</message>
+  <message>  Generating code for file stdafx.h...</message>
+  <message>  Generating code for file targetver.h...</message>
+  <message>  Generating code for file WinService.cpp...</message>
+  <message>  Generating file documentation...</message>
+  <message>  Generating docs for file ntverp.h...</message>
+  <message>  Generating docs for file resource.h...</message>
+  <message>  Generating docs for file stdafx.cpp...</message>
+  <message>  Generating docs for file stdafx.h...</message>
+  <message>  Generating docs for file targetver.h...</message>
+  <message>  Generating docs for file WinService.cpp...</message>
+  <message>  Generating caller graph for function YXHandler</message>
+  <message>  Warning: Tag `DETAILS_AT_TOP' at line 33 of file Doxyfile has become obsolete.</message>
+  <message>  To avoid this warning please update your configuration file using "doxygen -u"</message>
+  <message>  Generating call graph for function YXServiceMain</message>
+  <message>  Generating page documentation...</message>
+  <message>  Generating group documentation...</message>
+  <message>  Generating group index...</message>
+  <message>  Generating class documentation...</message>
+  <message>  Generating annotated compound index...</message>
+  <message>  Generating alphabetical compound index...</message>
+  <message>  Generating hierarchical class index...</message>
+  <message>  Generating member index...</message>
+  <message>  Generating graphical class hierarchy...</message>
+  <message>  Generating namespace index...</message>
+  <message>  Generating namespace member index...</message>
+  <message>  Generating graph info page...</message>
+  <message>  Generating file index...</message>
+  <message>  Generating example index...</message>
+  <message>  Generating file member index...</message>
+  <message>  将Doxygen输出文件编码从utf-8转换到gbk</message>
+  <message>  处理chm输入文件</message>
+  <message>  将index.hhp从utf-8编码转换到gbk编码</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  将index.hhc从utf-8编码转换到gbk编码</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  将index.hhk从utf-8编码转换到gbk编码</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  将*.html从utf-8编码转换到gbk编码</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  已复制         1 个文件。</message>
+  <message>  将*.html中的charset从UTF-8改为gb2312</message>
+  <message>  生成chm文件</message>
+  <message>  Microsoft HTML Help Compiler 4.74.8702</message>
+  <message>  </message>
+  <message>  </message>
+  <message>  </message>
+  <message>  Compiling d:\Prototype\WinService\output\html\index.chm</message>
+  <message>  </message>
+  <message>  </message>
+  <message>  </message>
+  <message>  </message>
+  <message>  </message>
+  <message>  Compile time: 0 minutes, 3 seconds</message>
+  <message>  </message>
+  <message>  63	Topics</message>
+  <message>  </message>
+  <message>  658	Local links</message>
+  <message>  </message>
+  <message>  19	Internet links</message>
+  <message>  </message>
+  <message>  8	Graphics</message>
+  <message>  </message>
+  <message>  </message>
+  <message>  </message>
+  <message>  </message>
+  <message>  </message>
+  <message>  Created d:\Prototype\WinService\output\html\index.chm, 92,351 bytes</message>
+  <message>  </message>
+  <message>  Compression decreased file by 123,017 bytes.</message>
+  <message>  </message>
+  <message>  已复制         1 个文件。</message>
+  <message>已完成生成项目“d:\Prototype\WinService\BuildTest.msbuild”(默认目标)。</message>
+  <message>生成成功。</message>
+  <message>    0 个警告</message>
+  <message>    0 个错误</message>
+  <message>已用时间 00:00:18.03</message>
+</buildresults>
+</build>
+</cruisecontrol>
