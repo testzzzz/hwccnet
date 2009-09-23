@@ -1,0 +1,57 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (2f142ef0).
+//
+// DcomSvr.tlh
+//
+// C++ source equivalent of Win32 type library ../DcomSvr/DcomSvr.tlb
+// compiler-generated file created 09/15/09 at 11:56:01 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ MyObject;
+struct __declspec(uuid("f5648f39-3fcf-49bd-bc84-1a52beac849e"))
+/* dual interface */ IMyObject;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IMyObject, __uuidof(IMyObject));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("c6edec7b-b9ab-45cb-8090-1589f3e47283"))
+MyObject;
+    // [ default ] interface IMyObject
+
+struct __declspec(uuid("f5648f39-3fcf-49bd-bc84-1a52beac849e"))
+IMyObject : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall GetData (
+        long * lpData ) = 0;
+};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_DCOMSVRLib =
+    {0xf51b86b6,0xef5b,0x494d,{0x9f,0xb8,0x61,0x40,0xd6,0x5e,0x2c,0xb4}};
+extern "C" const GUID __declspec(selectany) CLSID_MyObject =
+    {0xc6edec7b,0xb9ab,0x45cb,{0x80,0x90,0x15,0x89,0xf3,0xe4,0x72,0x83}};
+extern "C" const GUID __declspec(selectany) IID_IMyObject =
+    {0xf5648f39,0x3fcf,0x49bd,{0xbc,0x84,0x1a,0x52,0xbe,0xac,0x84,0x9e}};
+
+#pragma pack(pop)
