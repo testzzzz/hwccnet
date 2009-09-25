@@ -357,6 +357,9 @@ void pfnThreadProc()
             LeaveCriticalSection(&g_cs);
         }
     }
+
+    delete p;
+    p = NULL;
 }
 
 ////////////////////////////////////////////////////////////
@@ -374,5 +377,6 @@ void CWinHTTPTestUIDlg::OnDestroy()
 
     WinHTTPLW::Uninitialize();
     DeleteCriticalSection(&g_cs);
+    delete m_pDlg;
     m_pDlg = NULL;
 }
