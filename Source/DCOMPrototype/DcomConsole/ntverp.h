@@ -138,9 +138,9 @@
 
 #ifndef VER_PRODUCTNAME_STR
 #ifdef RC_INVOKED
-#define VER_PRODUCTNAME_STR         L"WinHTTPLW"
+#define VER_PRODUCTNAME_STR         L"AutoVersion"
 #else
-#define VER_PRODUCTNAME_STR         "WinHTTPLW"
+#define VER_PRODUCTNAME_STR         "AutoVersion"
 #endif
 #endif
 #define VER_LEGALTRADEMARKS_STR     \
