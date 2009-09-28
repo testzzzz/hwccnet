@@ -1,3 +1,0 @@
-D:/Prototype/DCOM/DCOMPrototype/DCOMPrototype/DCOMSvr/MyObject.cpp:11: Warning: no matching class member found for
-  STDMETHODIMP CMyObject::GetData(long *lpData)
-D:/Prototype/DCOM/DCOMPrototype/DCOMPrototype/DCOMSvr/MyObject.h:31: Warning: documented function `CMyObject::STDMETHOD' was not declared or defined.
