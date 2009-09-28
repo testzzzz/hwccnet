@@ -27,7 +27,7 @@
 #define VER_PRODUCTBUILD            /* NT */   1
 
 // Build_Number
-#define VER_PRODUCTBUILD_QFE       0
+#define VER_PRODUCTBUILD_QFE      1
 
 
 //
@@ -138,9 +138,9 @@
 
 #ifndef VER_PRODUCTNAME_STR
 #ifdef RC_INVOKED
-#define VER_PRODUCTNAME_STR         L"AutoVersion"
+#define VER_PRODUCTNAME_STR         L"WinService"
 #else
-#define VER_PRODUCTNAME_STR         "AutoVersion"
+#define VER_PRODUCTNAME_STR         "WinService"
 #endif
 #endif
 #define VER_LEGALTRADEMARKS_STR     \
