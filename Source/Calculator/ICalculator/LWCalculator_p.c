@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0500 */
-/* at Fri Sep 11 17:06:56 2009
+/* at Sun Sep 27 10:57:23 2009
  */
 /* Compiler settings for .\LWCalculator.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
