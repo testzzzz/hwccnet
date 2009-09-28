@@ -1,0 +1,37 @@
+// DcomSvr.idl : DcomSvr 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(DcomSvr.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+    uuid(CCB73CBC-0E28-49F1-AE94-E3A14DE2B3B8),
+    dual,
+    nonextensible,
+    helpstring("IMyObject 接口"),
+    pointer_default(unique)
+]
+interface IMyObject : IDispatch{
+    [id(1), helpstring("方法GetData")] HRESULT GetData([out] LONG* lpData);
+};
+[
+    uuid(FD594542-3763-43B8-A3EB-DF3073F53A0B),
+    version(1.0),
+    helpstring("DcomSvr 1.0 类型库")
+]
+library DcomSvrLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(14179448-A0D0-4625-ACC3-21E4720881FB),
+        helpstring("MyObject Class")
+    ]
+    coclass MyObject
+    {
+        [default] interface IMyObject;
+    };
+};
