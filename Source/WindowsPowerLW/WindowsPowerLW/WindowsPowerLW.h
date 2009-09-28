@@ -50,21 +50,13 @@ public:
     ///
     /// @brief 获取当前Windows下的电源使用方案，和电源的情况
     ///
-    /// @param __out UINT& nIndex                             当前正在使用的Power scheme的索引
-    /// @param __out POWER_POLICY& PwrPolicy                  电源策略的结构体
-    /// @param __out SYSTEM_POWER_STATUS &systemPowerStatus   系统电源/电池状态
-    ///
     /// @return HRESULT
     ///
     /// @retval S_OK 正常返回
     /// @retval 通过GetLastError()返回
     ///
     ////////////////////////////////////////////////////////////
-    HRESULT GetCurrentPowerScheme(
-        __out UINT& nIndex, 
-        __out POWER_POLICY& PwrPolicy,
-        __out SYSTEM_POWER_STATUS &SystemPowerStatus
-        );
+    HRESULT GetCurrentPowerScheme();
 
     ////////////////////////////////////////////////////////////
     ///
@@ -88,8 +80,6 @@ public:
     ///
     /// @param __out ULONG& nStandby                         系统挂起时间
     /// @param __out ULONG& nHibernate                       系统休眠时间
-    /// @param __in POWER_POLICY& PwrPolicy                  电源策略的结构体
-    /// @param __in SYSTEM_POWER_STATUS systemPowerStatus    系统电源/电池状态
     ///
     /// @return HRESULT
     ///
@@ -99,9 +89,7 @@ public:
     ////////////////////////////////////////////////////////////
     HRESULT GetSuspendTime(
         __out ULONG& nStandby,
-        __out ULONG& nHibernate,
-        __in POWER_POLICY pwrPolicy,
-        __in SYSTEM_POWER_STATUS SystemPowerStatus
+        __out ULONG& nHibernate
         );
 
     ////////////////////////////////////////////////////////////
@@ -109,8 +97,6 @@ public:
     /// @brief 获取当前Windows下的电源使用方案的关闭监视器时间
     ///
     /// @param __out ULONG& nVideoOffTime                    关闭监视器时间
-    /// @param __in POWER_POLICY& PwrPolicy                  电源策略的结构体
-    /// @param __in SYSTEM_POWER_STATUS systemPowerStatus    系统电源/电池状态
     ///
     /// @return HRESULT
     ///
@@ -119,9 +105,7 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     HRESULT GetVideoOffTime(
-        __out ULONG& nVideoOffTime,
-        __in POWER_POLICY pwrPolicy,
-        __in SYSTEM_POWER_STATUS SystemPowerStatus
+        __out ULONG& nVideoOffTime
         );
 
     ////////////////////////////////////////////////////////////
@@ -129,8 +113,6 @@ public:
     /// @brief 获取当前Windows下的电源使用方案的关闭硬盘时间
     ///
     /// @param __out ULONG& nSpindownTime                    关闭硬盘时间
-    /// @param __in POWER_POLICY& PwrPolicy                  电源策略的结构体
-    /// @param __in SYSTEM_POWER_STATUS systemPowerStatus    系统电源/电池状态
     ///
     /// @return HRESULT
     ///
@@ -139,18 +121,13 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     HRESULT GetDiskSpindownTime(
-        __out ULONG& nSpindownTime,
-        __in POWER_POLICY pwrPolicy,
-        __in SYSTEM_POWER_STATUS SystemPowerStatus
+        __out ULONG& nSpindownTime
         );
 
     ////////////////////////////////////////////////////////////
     ///
     /// @brief 设置当前Windows下的电源使用方案
     ///
-    /// @param __in UINT nIndex                              当前电源使用方案的索引
-    /// @param __in POWER_POLICY& PwrPolicy                  电源策略的结构体
-    /// @param __in SYSTEM_POWER_STATUS systemPowerStatus    系统电源/电池状态
     /// @param __in ULONG nStandby = PWR_NEVER               系统挂起时间，默认值为0
     /// @param __in ULONG nHibernate = PWR_NEVER             系统待机时间，默认值为0
     /// @param __in ULONG& nSpindownTime = PWR_NEVER         关闭硬盘时间，默认值为0
@@ -162,15 +139,14 @@ public:
     /// @retval 通过GetLastError()返回
     ///
     ////////////////////////////////////////////////////////////
-    HRESULT UpdateCurrentPowerScheme( 
-        __in UINT nIndex,
-        __in POWER_POLICY pwrPolicy,
-        __in SYSTEM_POWER_STATUS SystemPowerStatus,
+    HRESULT UpdateCurrentPowerScheme(
         __in ULONG nStandby = PWR_NEVER,
         __in ULONG nHibernate = PWR_NEVER,
         __in ULONG nSpindownTime = PWR_NEVER,
         __in ULONG nVedioOffTime = PWR_NEVER
         );
-
 private:
+    UINT nIndex;                                                  ///< 当前电源使用方案的索引
+    POWER_POLICY pwrPolicy;                                       ///< 电源策略的结构体
+    SYSTEM_POWER_STATUS SystemPowerStatus;                        ///< 系统电源/电池状态
 };

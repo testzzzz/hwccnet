@@ -34,10 +34,10 @@ int main(int argc,char*argv[])
     UNREFERENCED(argv);
 
     HRESULT Error = S_OK;
-    WindowsPowerLW *pWinPwrLW = NULL;
-    UINT nIndex = 0;                                          ///< 电源使用方案索引
-    POWER_POLICY pwrPolicy;                                   ///< 系统电源使用方案
-    SYSTEM_POWER_STATUS SystemPowerStatus;                    ///< 系统电源状态
+    WindowsPowerLW *pWinPwrLW = new WindowsPowerLW();
+//     UINT nIndex = 0;                                          ///< 电源使用方案索引
+//     POWER_POLICY pwrPolicy;                                   ///< 系统电源使用方案
+//     SYSTEM_POWER_STATUS SystemPowerStatus;                    ///< 系统电源状态
 
     bool cuwpsFlag = true;
     Error = pWinPwrLW->CanUserWritePowerScheme(&cuwpsFlag);
@@ -52,28 +52,21 @@ int main(int argc,char*argv[])
         goto exit;
     }
 
-    Error = pWinPwrLW->GetCurrentPowerScheme(
-        nIndex,
-        pwrPolicy,
-        SystemPowerStatus
-        );
+    Error = pWinPwrLW->GetCurrentPowerScheme();
     if (FAILED(Error))
     {
         cout << "GetCurrentPowerScheme Error " << endl;
        goto exit;
     }
 
-//     pWinPwrLW->UpdateCurrentPowerScheme(nIndex,pwrPolicy,SystemPowerStatus,1200,3600,7200,3600);
-//     Error = pWinPwrLW->GetCurrentPowerScheme(
-//         nIndex,
-//         pwrPolicy,
-//         SystemPowerStatus
-//         );
-//     if (FAILED(Error))
-//     {
-//         cout << "GetCurrentPowerScheme Error " << endl;
-//         return 0;
-//     }
+    pWinPwrLW->UpdateCurrentPowerScheme(0,0,0,0);
+    Error = pWinPwrLW->GetCurrentPowerScheme(
+        );
+    if (FAILED(Error))
+    {
+        cout << "GetCurrentPowerScheme Error " << endl;
+        return 0;
+    }
 
     ULONG nStandby          = 0;
     ULONG nHibernate        = 0;
@@ -82,9 +75,8 @@ int main(int argc,char*argv[])
 
     Error = pWinPwrLW->GetSuspendTime(
         nStandby,
-        nHibernate,
-        pwrPolicy,
-        SystemPowerStatus);
+        nHibernate
+        );
     if (FAILED(Error))
     {
         cout << "GetSuspendTime Error " << endl;
@@ -92,9 +84,7 @@ int main(int argc,char*argv[])
     }
 
     Error = pWinPwrLW->GetDiskSpindownTime(
-        nSpindownTime,
-        pwrPolicy,
-        SystemPowerStatus
+        nSpindownTime
         );
     if (FAILED(Error))
     {
@@ -103,9 +93,7 @@ int main(int argc,char*argv[])
     }
 
     Error = pWinPwrLW->GetVideoOffTime(
-        nVideoOffTime,
-        pwrPolicy,
-        SystemPowerStatus
+        nVideoOffTime
         );
     if (FAILED(Error))
     {
@@ -119,7 +107,6 @@ int main(int argc,char*argv[])
          << "nVideoOffTime = " << nVideoOffTime << "\n";
 
 exit:
-    delete pWinPwrLW;
     system("pause");
     return 0;
 }
