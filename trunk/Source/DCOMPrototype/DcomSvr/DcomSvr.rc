@@ -1,16 +1,13 @@
 // Microsoft Visual C++ generated resource script.
 //
-#include "resource.h"
+//#include "resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
 //
 // Generated from the TEXTINCLUDE 2 resource.
 //
-#ifndef APSTUDIO_INVOKED
-#include "targetver.h"
-#endif
-#include "winres.h"
+#include "afxres.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
@@ -37,16 +34,13 @@ END
 
 2 TEXTINCLUDE 
 BEGIN
-    "#ifndef APSTUDIO_INVOKED\r\n"
-    "#include ""targetver.h""\r\n"
-    "#endif\r\n"
-    "#include ""winres.h""\r\n"
+    "#include ""afxres.h""\r\n"
     "\0"
 END
 
 3 TEXTINCLUDE 
 BEGIN
-    "1 TYPELIB ""DcomSvr.tlb""\r\n"
+    "\r\n"
     "\0"
 END
 
@@ -58,57 +52,21 @@ END
 // Version
 //
 
-VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,1
- PRODUCTVERSION 1,0,0,1
- FILEFLAGSMASK 0x3fL
-#ifdef _DEBUG
- FILEFLAGS 0x1L
-#else
- FILEFLAGS 0x0L
-#endif
- FILEOS 0x4L
- FILETYPE 0x1L
- FILESUBTYPE 0x0L
-BEGIN
-    BLOCK "StringFileInfo"
-    BEGIN
-        BLOCK "080403a8"
-        BEGIN
-            VALUE "CompanyName", "TODO: <公司名>"
-            VALUE "FileDescription", "TODO: <文件说明>"
-            VALUE "FileVersion", "1.0.0.1"
-            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
-            VALUE "InternalName", "DcomSvr.exe"
-            VALUE "OriginalFilename", "DcomSvr.exe"
-            VALUE "ProductName", "TODO: <产品名>"
-            VALUE "ProductVersion", "1.0.0.1"
-        END
-    END
-    BLOCK "VarFileInfo"
-    BEGIN
-        VALUE "Translation", 0x804, 936
-    END
-END
+#include <windows.h>
 
-
-/////////////////////////////////////////////////////////////////////////////
 //
-// REGISTRY
+// We can change the macros in ntverp.h to change the file's type and version
 //
+#include "ntverp.h"
 
-IDR_DCOMSVR             REGISTRY                "DcomSvr.rgs"
-IDR_MYOBJECT            REGISTRY                "MyObject.rgs"
 
-/////////////////////////////////////////////////////////////////////////////
-//
-// String Table
-//
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "Produced by JimmyGan"
+#define VER_INTERNALNAME_STR        "DcomPrototype.exe"
+#define VER_ORIGINALFILENAME_STR    "DcomPrototype.exe"
 
-STRINGTABLE 
-BEGIN
-    IDS_SERVICENAME         "DcomSvr"
-END
+#include "common.ver"
 
 #endif    // 中文(中华人民共和国) resources
 /////////////////////////////////////////////////////////////////////////////
@@ -120,7 +78,7 @@ END
 //
 // Generated from the TEXTINCLUDE 3 resource.
 //
-1 TYPELIB "DcomSvr.tlb"
+
 
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
