@@ -62,9 +62,9 @@ END
 
 #define VER_FILETYPE                VFT_DRV
 #define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
-#define VER_FILEDESCRIPTION_STR     "Produced by NesTa.xP"
-#define VER_INTERNALNAME_STR        "WinService.exe"
-#define VER_ORIGINALFILENAME_STR    "WinService.exe"
+#define VER_FILEDESCRIPTION_STR     "Produced by JimmyGan"
+#define VER_INTERNALNAME_STR        "DcomSvr.exe"
+#define VER_ORIGINALFILENAME_STR    "DcomSvr.exe"
 
 #include "common.ver"
 
