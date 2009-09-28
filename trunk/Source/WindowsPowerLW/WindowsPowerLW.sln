@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WindowsPowerLW", "WindowsPowerLW\WindowsPowerLW.vcproj", "{79961EA5-77CB-4C5F-8839-CB64DAA38618}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gTestWinPwr", "gTestWinPwr\gTestWinPwr.vcproj", "{53AC16B9-7F51-40C3-9744-167436D2DF10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{79961EA5-77CB-4C5F-8839-CB64DAA38618}.Debug|Win32.Build.0 = Debug|Win32
 		{79961EA5-77CB-4C5F-8839-CB64DAA38618}.Release|Win32.ActiveCfg = Release|Win32
 		{79961EA5-77CB-4C5F-8839-CB64DAA38618}.Release|Win32.Build.0 = Release|Win32
+		{53AC16B9-7F51-40C3-9744-167436D2DF10}.Debug|Win32.ActiveCfg = Debug|Win32
+		{53AC16B9-7F51-40C3-9744-167436D2DF10}.Debug|Win32.Build.0 = Debug|Win32
+		{53AC16B9-7F51-40C3-9744-167436D2DF10}.Release|Win32.ActiveCfg = Release|Win32
+		{53AC16B9-7F51-40C3-9744-167436D2DF10}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
