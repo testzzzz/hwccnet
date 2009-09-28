@@ -18,6 +18,7 @@
 #include "WindowsPowerLW.h"
 
 WindowsPowerLW::WindowsPowerLW(void)
+: nIndex(0)
 {
 }
 
@@ -39,20 +40,15 @@ WindowsPowerLW::~WindowsPowerLW(void)
 /// @retval 通过GetLastError()返回
 ///
 ////////////////////////////////////////////////////////////
-HRESULT WindowsPowerLW::GetCurrentPowerScheme(
-    __out UINT& nIndex, 
-    __out POWER_POLICY& PwrPolicy,
-    __out SYSTEM_POWER_STATUS &SystemPowerStatus
-    )
+HRESULT WindowsPowerLW::GetCurrentPowerScheme()
 {
-    memset(&PwrPolicy,NULL,sizeof(POWER_POLICY));
+    memset(&pwrPolicy,0,sizeof(POWER_POLICY));
     //得到当前正在使用的Power Scheme的索引 
-
     if (!GetActivePwrScheme(&nIndex))
     {
         return HRESULT_FROM_WIN32(::GetLastError());
     }
-    if (!ReadPwrScheme(nIndex,&PwrPolicy))
+    if (!ReadPwrScheme(nIndex,&pwrPolicy))
     {
         return HRESULT_FROM_WIN32(::GetLastError());
     }
@@ -105,9 +101,7 @@ HRESULT WindowsPowerLW::CanUserWritePowerScheme(
 ////////////////////////////////////////////////////////////
 HRESULT WindowsPowerLW::GetSuspendTime(
     __out ULONG& nStandby,
-    __out ULONG& nHibernate,
-    __in POWER_POLICY pwrPolicy,
-    __in SYSTEM_POWER_STATUS SystemPowerStatus
+    __out ULONG& nHibernate
     )
 {
     if (SystemPowerStatus.ACLineStatus)
@@ -140,12 +134,10 @@ HRESULT WindowsPowerLW::GetSuspendTime(
 ///
 ////////////////////////////////////////////////////////////
 HRESULT WindowsPowerLW::GetVideoOffTime(
-    __out ULONG& nVideoOffTime,
-    __in POWER_POLICY pwrPolicy,
-    __in SYSTEM_POWER_STATUS SysPowerStatus
+    __out ULONG& nVideoOffTime
     )
 {
-    if (SysPowerStatus.ACLineStatus)
+    if (SystemPowerStatus.ACLineStatus)
     {
         nVideoOffTime = pwrPolicy.user.VideoTimeoutAc;
     }
@@ -171,12 +163,10 @@ HRESULT WindowsPowerLW::GetVideoOffTime(
 ///
 ////////////////////////////////////////////////////////////
 HRESULT WindowsPowerLW::GetDiskSpindownTime(
-    __out ULONG &nSpindowTime,
-    __in POWER_POLICY pwrPolicy,
-    __in SYSTEM_POWER_STATUS SystemPowrStatus
+    __out ULONG &nSpindowTime
     )
 {
-    if (SystemPowrStatus.ACLineStatus)
+    if (SystemPowerStatus.ACLineStatus)
     {
         nSpindowTime = pwrPolicy.user.SpindownTimeoutAc;
     }
@@ -206,9 +196,6 @@ HRESULT WindowsPowerLW::GetDiskSpindownTime(
 ///
 ////////////////////////////////////////////////////////////
 HRESULT WindowsPowerLW::UpdateCurrentPowerScheme(
-    __in UINT nIndex,
-    __in POWER_POLICY pwrPolicy,
-    __in SYSTEM_POWER_STATUS SystemPowerStatus,
     __in ULONG nStandby,
     __in ULONG nHibernate,
     __in ULONG nSpindowTime,
@@ -270,12 +257,9 @@ HRESULT WindowsPowerLW::UpdateCurrentPowerScheme(
         pwrPolicy.user.SpindownTimeoutDc   = nSpindowTime;
         pwrPolicy.user.VideoTimeoutDc      = nVideoOffTime;
     }
-
     if (!SetActivePwrScheme(nIndex,NULL,&pwrPolicy))
     {
         return HRESULT_FROM_WIN32(GetLastError());
     }
-
-
     return S_OK;
 }
