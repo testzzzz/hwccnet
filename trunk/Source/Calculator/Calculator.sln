@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LWCTool", "LWTool\LWTool.vc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LWUI", "LWUI\LWUI.vcproj", "{542C5600-79B9-4C5D-BB63-A34CF417AE61}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GTest", "gtest\testICalculator.vcproj", "{F0DE2852-3B78-41E7-8AE7-0309A84A428F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -31,6 +33,10 @@ Global
 		{542C5600-79B9-4C5D-BB63-A34CF417AE61}.Debug|Win32.Build.0 = Debug|Win32
 		{542C5600-79B9-4C5D-BB63-A34CF417AE61}.Release|Win32.ActiveCfg = Release|Win32
 		{542C5600-79B9-4C5D-BB63-A34CF417AE61}.Release|Win32.Build.0 = Release|Win32
+		{F0DE2852-3B78-41E7-8AE7-0309A84A428F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F0DE2852-3B78-41E7-8AE7-0309A84A428F}.Debug|Win32.Build.0 = Debug|Win32
+		{F0DE2852-3B78-41E7-8AE7-0309A84A428F}.Release|Win32.ActiveCfg = Release|Win32
+		{F0DE2852-3B78-41E7-8AE7-0309A84A428F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

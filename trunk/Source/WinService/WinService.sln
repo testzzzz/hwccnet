@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinService", "WinService\WinService.vcproj", "{F056ACCD-BC20-40E9-B34D-CF658369A5A2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GTest", "GTest\GTest.vcproj", "{D98D5AB6-4E76-4678-A007-31FC994EC7FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{F056ACCD-BC20-40E9-B34D-CF658369A5A2}.Debug|Win32.Build.0 = Debug|Win32
 		{F056ACCD-BC20-40E9-B34D-CF658369A5A2}.Release|Win32.ActiveCfg = Release|Win32
 		{F056ACCD-BC20-40E9-B34D-CF658369A5A2}.Release|Win32.Build.0 = Release|Win32
+		{D98D5AB6-4E76-4678-A007-31FC994EC7FD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D98D5AB6-4E76-4678-A007-31FC994EC7FD}.Debug|Win32.Build.0 = Debug|Win32
+		{D98D5AB6-4E76-4678-A007-31FC994EC7FD}.Release|Win32.ActiveCfg = Release|Win32
+		{D98D5AB6-4E76-4678-A007-31FC994EC7FD}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
