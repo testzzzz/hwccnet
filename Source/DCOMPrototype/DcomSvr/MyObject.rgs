@@ -1,0 +1,23 @@
+HKCR
+{
+	DcomSvr.MyObject.1 = s 'MyObject Class'
+	{
+		CLSID = s '{14179448-A0D0-4625-ACC3-21E4720881FB}'
+	}
+	DcomSvr.MyObject = s 'MyObject Class'
+	{
+		CLSID = s '{14179448-A0D0-4625-ACC3-21E4720881FB}'
+		CurVer = s 'DcomSvr.MyObject.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {14179448-A0D0-4625-ACC3-21E4720881FB} = s 'MyObject Class'
+		{
+			ProgID = s 'DcomSvr.MyObject.1'
+			VersionIndependentProgID = s 'DcomSvr.MyObject'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			'TypeLib' = s '{FD594542-3763-43B8-A3EB-DF3073F53A0B}'
+		}
+	}
+}

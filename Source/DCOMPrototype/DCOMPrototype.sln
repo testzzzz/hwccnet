@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DcomSvr", "DcomSvr\DcomSvr.vcproj", "{03C3D404-BA30-41F1-90E7-0E43C87420E3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DcomSvrPS", "DcomSvr\DcomSvrPS.vcproj", "{463FF84F-FEBA-4C02-862E-4E9E6B2D7DB9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{03C3D404-BA30-41F1-90E7-0E43C87420E3} = {03C3D404-BA30-41F1-90E7-0E43C87420E3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DcomConsole", "DcomConsole\DcomConsole.vcproj", "{3F9BA907-C7C4-418C-A13E-B37012B7904A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03C3D404-BA30-41F1-90E7-0E43C87420E3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03C3D404-BA30-41F1-90E7-0E43C87420E3}.Debug|Win32.Build.0 = Debug|Win32
+		{03C3D404-BA30-41F1-90E7-0E43C87420E3}.Release|Win32.ActiveCfg = Release|Win32
+		{03C3D404-BA30-41F1-90E7-0E43C87420E3}.Release|Win32.Build.0 = Release|Win32
+		{463FF84F-FEBA-4C02-862E-4E9E6B2D7DB9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{463FF84F-FEBA-4C02-862E-4E9E6B2D7DB9}.Release|Win32.ActiveCfg = Release|Win32
+		{3F9BA907-C7C4-418C-A13E-B37012B7904A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3F9BA907-C7C4-418C-A13E-B37012B7904A}.Debug|Win32.Build.0 = Debug|Win32
+		{3F9BA907-C7C4-418C-A13E-B37012B7904A}.Release|Win32.ActiveCfg = Release|Win32
+		{3F9BA907-C7C4-418C-A13E-B37012B7904A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
