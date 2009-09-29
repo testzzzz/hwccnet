@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="7e1f233a-c9d9-4648-9dbc-76931949f6e5" Name="AutoUpdateComponent" Language="1033" Version="1.0.0.0" Manufacturer="HengWei" UpgradeCode="6b1fc531-b4cb-40b1-992e-38269e372b40">
+    <Package InstallerVersion="200" Compressed="yes" />
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <UIRef Id="WixUI_InstallDir" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLLOCATION" Name="AutoUpdateComponent">
+          <Component Id="ProductComponent" Guid="cf2bf5eb-a0f8-4a6a-b52d-51df5dce0f59">
+            <File Id="UpdateConfig" Name="update.ini" Source="update.ini" DiskId="1" />
+            <File Id="AutoUpdateDLL" Name="Update.dll" Source="Update.dll" DiskId="1" />
+            <File Id="testAutoUpdate" Name="testUpdate.exe" Source="testUpdate.exe" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="ProductFeature" Title="AutoUpdateComponent" Level="1" Display='expand' ConfigurableDirectory='INSTALLLOCATION'>
+      <ComponentRef Id="ProductComponent" />
+    </Feature>
+  </Product>
+</Wix>
+
