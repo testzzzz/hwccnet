@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite tests="2" failures="1" disabled="0" errors="0" time="0.172" name="AllTests">
+  <testsuite name="gTestDcom" tests="2" failures="1" disabled="0" errors="0" time="0.125">
+    <testcase name="UseDcomSvrF" status="run" time="0.125" classname="gTestDcom" />
+    <testcase name="UseDcomSvrS" status="run" time="0" classname="gTestDcom">
+      <failure message="Value of: CoInitializeSecurity( 0, -1, 0, 0, 0, 2, 0, EOAC_NONE, 0 )&#x0A;  Actual: -2147417831&#x0A;Expected: ((HRESULT)0L)&#x0A;Which is: 0" type=""><![CDATA[.\gTestDcom.cpp:67
+Value of: CoInitializeSecurity( 0, -1, 0, 0, 0, 2, 0, EOAC_NONE, 0 )
+  Actual: -2147417831
+Expected: ((HRESULT)0L)
+Which is: 0]]></failure>
+    </testcase>
+  </testsuite>
+</testsuite>
