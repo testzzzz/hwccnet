@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="a3136512-bf6f-40bc-83a7-5521a6cf30dc" Name="BatteryStatus" Language="1033" Version="1.0.0.0" Manufacturer="HengWei" UpgradeCode="70ecd697-4066-4739-830c-76a586ff053f">
+		<Package InstallerVersion="200" Compressed="yes" />
+
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <UIRef Id="WixUI_InstallDir" />
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLLOCATION" Name="BatteryStatus">
+					<Component Id="ProductComponent" Guid="b72b2d82-56ef-482b-9f15-f0a06a7ab8b1">
+            <File Id="BatteryBin" Name="Battery.exe" Source="Battery.exe" DiskId="1" />
+					</Component>
+				</Directory>
+			</Directory>
+		</Directory>
+
+    <Feature Id="ProductFeature" Title="AutoUpdateComponent" Level="1" Display='expand' ConfigurableDirectory='INSTALLLOCATION'>
+			<ComponentRef Id="ProductComponent" />
+		</Feature>
+	</Product>
+</Wix>
