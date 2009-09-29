@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="9f15f0ad-c970-436c-bc47-76acf3f329d2" Name="WinService" Language="1033" Version="1.0.0.0" Manufacturer="HengWei" UpgradeCode="a6b05f29-5385-4d53-94f8-d6771ca121b4">
+		<Package InstallerVersion="200" Compressed="yes" />
+
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLLOCATION" Name="WinService">
+					<Component Id="ProductComponent" Guid="7ece170e-cace-4e99-9b87-4746b92ee72d">
+            <File Id="WinServiceBin" Name="WinService.exe" Source="WinService.exe" DiskId="1" />
+					</Component>
+				</Directory>
+			</Directory>
+		</Directory>
+
+    <Feature Id="ProductFeature" Title="WinService" Level="1" Display='expand' ConfigurableDirectory='INSTALLLOCATION'>
+			<ComponentRef Id="ProductComponent" />
+		</Feature>
+	</Product>
+</Wix>
