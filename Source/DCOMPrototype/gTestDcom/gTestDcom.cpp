@@ -31,7 +31,7 @@ TEST_F(gTestDcom,UseDcomSvrF)
     ASSERT_EQ(S_OK,Result.pItf->QueryInterface(&gTestDcom::pt));
     ASSERT_EQ(1,Result.pItf->Release());
     ASSERT_EQ(S_OK,gTestDcom::pt->GetData(&data));
-    //ASSERT_EQ(0,gTestDcom::pt->Release());
+    ASSERT_EQ(0,gTestDcom::pt->Release());
 }
 
 TEST_F(gTestDcom,UseDcomSvrS)
@@ -55,7 +55,7 @@ TEST_F(gTestDcom,UseDcomSvrS)
     ASSERT_EQ(S_OK,Result.pItf->QueryInterface(&gTestDcom::pt));
     ASSERT_EQ(1,Result.pItf->Release());
     ASSERT_EQ(S_OK,gTestDcom::pt->GetData(&data));
-    //ASSERT_EQ(0,gTestDcom::pt->Release());
+    ASSERT_EQ(0,gTestDcom::pt->Release());
 }
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -65,6 +65,7 @@ int _tmain(int argc, _TCHAR* argv[])
         cout << "error " << endl;
         return 0;
     }
+
     hr = CoInitializeSecurity( 
         NULL, 
         -1, 
