@@ -16,7 +16,7 @@
 			</Directory>
 		</Directory>
 
-    <Feature Id="ProductFeature" Title="AutoUpdateComponent" Level="1" Display='expand' ConfigurableDirectory='INSTALLLOCATION'>
+    <Feature Id="ProductFeature" Title="BatteryStatus" Level="1" Display='expand' ConfigurableDirectory='INSTALLLOCATION'>
 			<ComponentRef Id="ProductComponent" />
 		</Feature>
 	</Product>
