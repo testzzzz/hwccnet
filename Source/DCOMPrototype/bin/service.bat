@@ -1,0 +1,1 @@
+DcomSvr.exe -regserver
