@@ -1,2 +1,2 @@
 DcomSvr.exe -unregserver
-regsvr32 -u -s DcomSvrPS.dll
+regsvr32 -s DcomSvrPS.dll
