@@ -1,1 +1,1 @@
-regsvr32 DcomSvrPS.dll
+regsvr32 -s DcomSvrPS.dll
