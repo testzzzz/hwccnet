@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="6a2dbfee-1965-41a9-ac86-4beb1855a6d4" Name="WinHTTPLW" Language="1033" Version="1.0.0.0" Manufacturer="HengWei" UpgradeCode="d3d50851-2953-42d6-8612-81952865c7aa">
+		<Package InstallerVersion="200" Compressed="yes" />
+
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <UIRef Id="WixUI_InstallDir" />
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLLOCATION" Name="WinHTTPLW">
+					<Component Id="ProductComponent" Guid="cf7d11cc-9c99-4d22-b6db-63b14ad211db">
+            <File Id="WinHTTPLWBin" Name="WinHTTPLW.exe" Source="WinHTTPLW.exe" DiskId="1" />
+					</Component>
+				</Directory>
+			</Directory>
+		</Directory>
+
+    <Feature Id="ProductFeature" Title="WinHTTPLW" Level="1" Display='expand' ConfigurableDirectory='INSTALLLOCATION'>
+      <ComponentRef Id="ProductComponent" />
+		</Feature>
+	</Product>
+</Wix>
