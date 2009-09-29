@@ -20,15 +20,11 @@ class gTestDcom : public testing::Test
     public:
         static void SetUpTestCase()
         {
-            HRESULT hr = CoInitialize(NULL);
-            if (FAILED(hr))
-            {
-                cout << "error " <<endl;
-                return ;
-            }
+            pt = NULL; 
         }
         static void TearDownTestCase()
         {
+            pt->Release();
             CoUninitialize();
         }
     static IMyObject* pt;
