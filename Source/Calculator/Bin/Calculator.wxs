@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="614f1d99-e477-438c-a466-7859a5f3c184" Name="Calculator" Language="1033" Version="1.0.0.0" Manufacturer="HengWei" UpgradeCode="685875bd-4f0f-4f4c-8c42-95f842a15787">
+		<Package InstallerVersion="200" Compressed="yes" />
+
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <UIRef Id="WixUI_InstallDir" />
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLLOCATION" Name="Calculator">
+          <Component Id="ProductComponent" Guid="ee9a396c-4d97-4c92-bfef-30f3a196772f">
+            <File Id="LWCalculaorDLL" Name="LWCalculator.dll" Source="LWCalculator.dll" DiskId="1" />
+            <File Id="LWCToolBin" Name="LWCTool.exe" Source="LWCTool.exe" DiskId="1" />
+            <File Id="LWUIBin" Name="LWUI.exe" Source="LWUI.exe" DiskId="1" />
+            <File Id="TestBin" Name="Test.exe" Source="Test.exe" DiskId="1" />
+					</Component>
+				</Directory>
+			</Directory>
+		</Directory>
+
+    <Feature Id="ProductFeature" Title="Calculator" Level="1" Display='expand' ConfigurableDirectory='INSTALLLOCATION'>
+      <ComponentRef Id="ProductComponent" />
+		</Feature>
+	</Product>
+</Wix>
