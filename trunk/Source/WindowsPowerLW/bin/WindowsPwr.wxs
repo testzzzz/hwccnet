@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="13f1eefc-3f17-4d44-b92a-6ba79d3bed81" Name="WindowsPwr" Language="1033" Version="1.0.0.0" Manufacturer="WindowsPwr" UpgradeCode="4307f1c5-0ed0-4fba-8b63-928074de32db">
+    <Package InstallerVersion="200" Compressed="yes" />
+
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <UIRef Id="WixUI_InstallDir" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLLOCATION" Name="WindowsPwr">
+          <Component Id="ProductComponent" Guid="491b3724-cf24-4555-ac91-adb06cc23b54">
+            <File Id="WindowsPowerLWexe" Name="WindowsPowerLW.exe" Source="WindowsPowerLW.exe" DiskId="1"/>
+          </Component> 
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="ProductFeature" Title="WindowsPwr" Level="1" Display='expand' ConfigurableDirectory='INSTALLLOCATION'>
+      <ComponentRef Id="ProductComponent" />
+    </Feature>
+  </Product>
+</Wix>
