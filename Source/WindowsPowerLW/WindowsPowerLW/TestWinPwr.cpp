@@ -65,7 +65,7 @@ int main(int argc,char*argv[])
     if (FAILED(Error))
     {
         cout << "GetCurrentPowerScheme Error " << endl;
-        return 0;
+        goto exit;
     }
 
     ULONG nStandby          = 0;
@@ -107,6 +107,7 @@ int main(int argc,char*argv[])
          << "nVideoOffTime = " << nVideoOffTime << "\n";
 
 exit:
+    delete pWinPwrLW;
     system("pause");
     return 0;
 }

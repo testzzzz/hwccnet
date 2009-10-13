@@ -27,7 +27,7 @@
 #define VER_PRODUCTBUILD            /* NT */   1
 
 // Build_Number
-#define VER_PRODUCTBUILD_QFE      28
+#define VER_PRODUCTBUILD_QFE      46
 
 
 //
