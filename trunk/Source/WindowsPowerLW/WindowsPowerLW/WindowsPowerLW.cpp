@@ -108,7 +108,6 @@ HRESULT WindowsPowerLW::GetSuspendTime(
     {
         nStandby = pwrPolicy.user.IdleTimeoutAc;
         nHibernate = pwrPolicy.user.IdleTimeoutAc + pwrPolicy.mach.DozeS4TimeoutAc;
-       
     }
     else
     {
@@ -181,9 +180,6 @@ HRESULT WindowsPowerLW::GetDiskSpindownTime(
 ///
 /// @brief 设置当前Windows下的电源使用方案
 ///
-/// @param __in UINT nIndex                              当前电源使用方案的索引
-/// @param __in POWER_POLICY& PwrPolicy                  电源策略的结构体
-/// @param __in SYSTEM_POWER_STATUS systemPowerStatus    系统电源/电池状态
 /// @param __in ULONG nStandby = PWR_NEVER               系统挂起时间，默认值为0
 /// @param __in ULONG nHibernate = PWR_NEVER             系统待机时间，默认值为0
 /// @param __in ULONG& nSpindownTime = PWR_NEVER         关闭硬盘时间，默认值为0
