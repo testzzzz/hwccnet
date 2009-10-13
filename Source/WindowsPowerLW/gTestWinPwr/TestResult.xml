@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite tests="2" failures="0" disabled="0" errors="0" time="0.016" name="AllTests">
-  <testsuite name="gTestWinPwr" tests="2" failures="0" disabled="0" errors="0" time="0.016">
-    <testcase name="SystemPowerTest1" status="run" time="0.016" classname="gTestWinPwr" />
-    <testcase name="SystemPowerTest2" status="run" time="0" classname="gTestWinPwr" />
+<testsuite tests="2" failures="0" disabled="0" errors="0" time="0.015" name="AllTests">
+  <testsuite name="gTestWinPwr" tests="2" failures="0" disabled="0" errors="0" time="0.015">
+    <testcase name="SystemPowerTest1" status="run" time="0" classname="gTestWinPwr" />
+    <testcase name="SystemPowerTest2" status="run" time="0.015" classname="gTestWinPwr" />
   </testsuite>
 </testsuite>
