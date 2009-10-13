@@ -12,8 +12,9 @@
 ///
 //////////////////////////////////////////////////////////
 #pragma once
-#include "../WindowsPowerLW/WindowsPowerLW.h"
-#include "gtest/gtest.h"
+#include "../Xcover/WindowsPowerLW.h"
+#include "gtest\gtest.h"
+
 
 
 
